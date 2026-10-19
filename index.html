@@ -28,16 +28,17 @@
   --font:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Inter","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden;overflow-x:clip}
+main,section,.marquee{overflow-x:clip}
 body{font-family:var(--font);background:var(--bg);color:var(--ink);font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{display:block;max-width:100%;height:auto}
 a{color:inherit}
 .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
-section{padding:56px 0}
-h2{font-size:clamp(32px,6.5vw,56px);line-height:1.05;letter-spacing:-.03em;font-weight:700}
-.kicker{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--muted);letter-spacing:.02em;text-transform:uppercase;margin-bottom:14px}
+section{padding:36px 0}
+h2{font-size:clamp(28px,6vw,52px);line-height:1.05;letter-spacing:-.03em;font-weight:700}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--muted);letter-spacing:.02em;text-transform:uppercase;margin-bottom:8px}
 .lead{font-size:clamp(18px,2.4vw,21px);color:var(--muted);margin-top:14px;max-width:640px}
-.card{background:var(--card);border-radius:var(--r-lg);box-shadow:var(--shadow);padding:28px}
+.card{background:var(--card);border-radius:var(--r-lg);box-shadow:var(--shadow);padding:20px}
 
 /* nav */
 .nav{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(247,247,247,.72);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.05);padding-top:env(safe-area-inset-top)}
@@ -59,17 +60,17 @@ h2{font-size:clamp(32px,6.5vw,56px);line-height:1.05;letter-spacing:-.03em;font-
 .btn svg{width:22px;height:22px;flex:none}
 
 /* hero */
-.hero{padding:calc(56px + env(safe-area-inset-top) + 36px) 0 40px;background:linear-gradient(180deg,var(--sky) 0%,rgba(217,244,251,0) 520px)}
-.hero-grid{display:grid;gap:36px;align-items:center}
+.hero{padding:calc(56px + env(safe-area-inset-top) + 24px) 0 24px;background:linear-gradient(180deg,var(--sky) 0%,rgba(217,244,251,0) 520px)}
+.hero-grid{display:grid;gap:24px;align-items:center}
 .eyebrow{display:inline-flex;flex-wrap:wrap;gap:6px;align-items:center;background:#fff;border-radius:999px;padding:7px 14px;font-size:14px;font-weight:600;box-shadow:var(--shadow)}
 .eyebrow i{font-style:normal;color:var(--muted)}
-.hero h1{font-size:clamp(44px,10vw,92px);line-height:.98;letter-spacing:-.045em;font-weight:800;margin-top:18px}
+.hero h1{font-size:clamp(40px,10vw,88px);line-height:.98;letter-spacing:-.045em;font-weight:800;margin-top:14px}
 .hero h1 .ball{display:inline-block;animation:bounce 2.4s var(--ease) infinite}
-.hero p.sub{font-size:clamp(19px,2.6vw,23px);color:#3A3A3C;margin-top:18px;max-width:560px}
+.hero p.sub{font-size:clamp(17px,2.4vw,22px);color:#3A3A3C;margin-top:12px;max-width:560px}
 .hero p.sub b{color:var(--ink)}
-.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
 .hero-photo{position:relative;will-change:transform}
-.hero-photo img{width:100%;height:auto;max-height:72svh;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r-xl);box-shadow:0 30px 80px rgba(14,72,38,.22)}
+.hero-photo img{width:100%;height:auto;max-height:58svh;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r-xl);box-shadow:0 30px 80px rgba(14,72,38,.22)}
 .chip{position:absolute;background:rgba(255,255,255,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-radius:18px;padding:10px 14px;font-weight:700;font-size:15px;box-shadow:0 8px 30px rgba(0,0,0,.12);display:flex;gap:8px;align-items:center;font-variant-numeric:tabular-nums}
 .chip small{display:block;font-weight:600;font-size:12px;color:var(--muted)}
 .chip.c1{left:-8px;top:8%}
@@ -77,7 +78,7 @@ h2{font-size:clamp(32px,6.5vw,56px);line-height:1.05;letter-spacing:-.03em;font-
 @keyframes bounce{0%,100%{transform:translateY(0) rotate(0)}30%{transform:translateY(-18%) rotate(40deg)}55%{transform:translateY(0) rotate(80deg)}70%{transform:translateY(-6%) rotate(90deg)}}
 
 /* scoreboard */
-.board{position:relative;overflow:hidden;border-radius:var(--r-xl);color:#fff;padding:40px 24px;text-align:center;background:
+.board{position:relative;overflow:hidden;border-radius:var(--r-xl);color:#fff;padding:28px 18px;text-align:center;background:
   repeating-linear-gradient(90deg,var(--pitch) 0 60px,var(--pitch-light) 60px 120px)}
 .board::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 0%,rgba(255,255,255,.18),transparent 60%),linear-gradient(180deg,rgba(14,72,38,.15),rgba(14,72,38,.65))}
 .board svg.lines{position:absolute;inset:0;width:100%;height:100%;opacity:.28}
@@ -87,90 +88,91 @@ h2{font-size:clamp(32px,6.5vw,56px);line-height:1.05;letter-spacing:-.03em;font-
 .score .team{font-size:clamp(16px,3.4vw,24px);letter-spacing:.08em;text-transform:uppercase;opacity:.92}
 .score .n{font-size:clamp(64px,16vw,140px);line-height:1;font-variant-numeric:tabular-nums;background:rgba(0,0,0,.28);border-radius:24px;padding:4px 22px;min-width:1.3em;text-shadow:0 0 30px rgba(255,210,63,.5);color:var(--yellow)}
 .score .colon{font-size:clamp(40px,10vw,90px);opacity:.8;margin-top:-34px}
-.board .cap{margin-top:18px;font-size:clamp(17px,2.4vw,20px);font-weight:600}
-.count{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:520px;margin:28px auto 0}
-.count div{background:rgba(255,255,255,.14);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:16px;padding:12px 4px}
-.count b{display:block;font-size:clamp(26px,6vw,38px);font-variant-numeric:tabular-nums;line-height:1.1}
+.board .cap{margin-top:12px;font-size:clamp(17px,2.4vw,20px);font-weight:600}
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-width:520px;margin:12px auto 0}
+.count div{background:rgba(255,255,255,.14);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:14px;padding:8px 4px}
+.count b{display:block;font-size:clamp(22px,5.5vw,36px);font-variant-numeric:tabular-nums;line-height:1.1}
 .count span{font-size:12px;text-transform:uppercase;letter-spacing:.08em;opacity:.85}
-.count-title{margin-top:26px;font-size:15px;font-weight:600;opacity:.9}
+.count-title{margin-top:16px;font-size:15px;font-weight:600;opacity:.9}
 
 /* players */
-.players{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:32px}
+.players{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
 .player{position:relative;border-radius:var(--r-lg);overflow:hidden;background:#fff;box-shadow:var(--shadow);cursor:pointer;-webkit-tap-highlight-color:transparent;transition:transform .3s var(--ease)}
 .player:active{transform:scale(.98)}
 .player img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
 .player .num{position:absolute;top:12px;right:12px;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:26px;box-shadow:0 6px 20px rgba(0,0,0,.18)}
 .player.m .num{background:var(--yellow);color:var(--ink)}
 .player.l .num{background:var(--blue);color:#fff}
-.player .info{padding:16px 16px 20px}
+.player .info{padding:12px 14px 14px}
 .player h3{font-size:clamp(22px,4vw,30px);letter-spacing:-.02em;line-height:1.1}
 .tag{display:inline-block;margin-top:8px;font-size:13px;font-weight:700;padding:5px 11px;border-radius:999px}
 .player.m .tag{background:var(--yellow-soft);color:#7A5B00}
 .player.l .tag{background:var(--blue-soft);color:#1550B8}
 .player p{margin-top:10px;font-size:15px;color:var(--muted);line-height:1.45}
-.duo-note{margin-top:22px;font-size:clamp(18px,2.4vw,21px);font-weight:600;text-align:center}
+.duo-note{margin-top:14px;font-size:clamp(16px,2.2vw,20px);font-weight:600;text-align:center}
 .player.pop{animation:pop .5s var(--ease)}
 @keyframes pop{30%{transform:scale(1.04) rotate(-1deg)}60%{transform:scale(.99) rotate(.5deg)}}
 
 /* marquee */
 .marquee{overflow:hidden;padding:8px 0 4px;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 8%,#000 92%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0%,#000 8%,#000 92%,transparent 100%)}
 .track{display:flex;gap:14px;width:max-content;animation:slide 38s linear infinite}
-.track img{height:clamp(220px,40vw,320px)!important;width:auto;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r-md);box-shadow:var(--shadow)}
+.track img{height:clamp(170px,34vw,280px)!important;width:auto;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r-md);box-shadow:var(--shadow)}
 @keyframes slide{to{transform:translateX(calc(-50% - 7px))}}
 
 /* bento: when & where */
-.bento{display:grid;gap:14px;margin-top:32px;grid-template-columns:1fr 1fr}
+.bento{display:grid;gap:12px;margin-top:18px;grid-template-columns:1fr 1fr}
 .bento .card{display:flex;flex-direction:column;gap:6px}
 .bento .big{font-size:clamp(26px,6vw,46px);font-weight:800;letter-spacing:-.03em;line-height:1.05;font-variant-numeric:tabular-nums}
 .bento .lbl{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
 .bento .place{grid-column:1/-1}
 .bento .place .addr{font-size:17px;color:#3A3A3C}
-.bento .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.bento .btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.bento .btns .btn{min-height:46px;padding:0 20px;font-size:16px}
 .date-card{background:var(--yellow)!important}
 .date-card .lbl{color:rgba(0,0,0,.55)}
 .time-card{background:var(--ink)!important;color:#fff}
 .time-card .lbl{color:rgba(255,255,255,.6)}
 
 /* timeline */
-.timeline{margin-top:32px;display:grid;gap:12px}
-.step{display:grid;grid-template-columns:64px 1fr;gap:16px;align-items:start;background:#fff;border-radius:var(--r-md);padding:18px;box-shadow:var(--shadow)}
-.step .ico{width:64px;height:64px;border-radius:18px;display:grid;place-items:center;font-size:30px}
-.step time{font-size:14px;font-weight:700;color:var(--muted);font-variant-numeric:tabular-nums}
-.step h3{font-size:19px;letter-spacing:-.01em;margin-top:2px}
-.step p{font-size:16px;color:#3A3A3C;margin-top:2px}
+.timeline{margin-top:18px;display:grid;gap:8px}
+.step{display:grid;grid-template-columns:48px 1fr;gap:14px;align-items:center;background:#fff;border-radius:var(--r-md);padding:12px 14px;box-shadow:var(--shadow)}
+.step .ico{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;font-size:24px}
+.step time{font-size:13px;font-weight:700;color:var(--muted);font-variant-numeric:tabular-nums}
+.step h3{font-size:17px;letter-spacing:-.01em;margin-top:0;line-height:1.25}
+.step p{font-size:15px;color:#3A3A3C;margin-top:1px;line-height:1.4}
 
 /* venue */
-.venue{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:32px}
-.zone{border-radius:var(--r-lg);padding:24px;min-height:220px;display:flex;flex-direction:column;gap:2px}
-.zone .em{font-size:44px;line-height:1;margin-bottom:auto;padding-bottom:18px}
-.zone h3{font-size:24px;letter-spacing:-.02em}
+.venue{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.zone{border-radius:var(--r-lg);padding:18px 20px;min-height:0;display:grid;grid-template-columns:auto 1fr;column-gap:16px;align-items:center}
+.zone .em{font-size:40px;line-height:1;grid-row:span 3}
+.zone h3{font-size:20px;letter-spacing:-.02em;line-height:1.2}
 .zone .m2{font-size:14px;font-weight:700;opacity:.7}
-.zone p{margin-top:6px;font-size:16px}
+.zone p{margin-top:2px;font-size:15px;line-height:1.4}
 .zone.in{background:#EFE7FF}
 .zone.out{background:#DDF5E4}
-.rain{margin-top:14px;text-align:center;color:var(--muted);font-size:16px}
+.rain{margin-top:10px;text-align:center;color:var(--muted);font-size:16px}
 
 /* parents */
-.parents{background:var(--yellow-soft);border-radius:var(--r-xl);padding:clamp(28px,5vw,48px)}
-.parents h2{font-size:clamp(28px,5vw,44px)}
-.parents p{margin-top:14px;font-size:clamp(17px,2.2vw,19px);color:#3A3A3C;max-width:720px}
-.times{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.parents{background:var(--yellow-soft);border-radius:var(--r-xl);padding:clamp(22px,4vw,40px)}
+.parents h2{font-size:clamp(24px,4.6vw,40px)}
+.parents p{margin-top:10px;font-size:clamp(16px,2vw,18px);color:#3A3A3C;max-width:720px}
+.times{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
 .times span{background:#fff;border-radius:999px;padding:10px 16px;font-weight:700;font-size:15px;box-shadow:var(--shadow)}
 
 /* bring */
-.bring{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:32px}
-.bring .card{padding:22px}
-.bring .em{font-size:34px}
-.bring h3{font-size:18px;margin-top:10px;letter-spacing:-.01em}
-.bring p{font-size:15px;color:var(--muted);margin-top:4px}
+.bring{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:18px}
+.bring .card{padding:16px}
+.bring .em{font-size:28px}
+.bring h3{font-size:16px;margin-top:6px;letter-spacing:-.01em}
+.bring p{font-size:14px;color:var(--muted);margin-top:2px;line-height:1.4}
 
 /* rsvp */
-.rsvp{background:var(--ink);color:#fff;border-radius:var(--r-xl);padding:clamp(28px,6vw,56px);text-align:center;position:relative;overflow:hidden}
+.rsvp{background:var(--ink);color:#fff;border-radius:var(--r-xl);padding:clamp(24px,5vw,48px);text-align:center;position:relative;overflow:hidden}
 .rsvp::before{content:"";position:absolute;inset:auto -20% -60% -20%;height:120%;background:radial-gradient(closest-side,rgba(37,211,102,.35),transparent);pointer-events:none}
 .rsvp > *{position:relative}
 .rsvp h2{color:#fff}
 .rsvp .lead{color:rgba(255,255,255,.72);margin:14px auto 0}
-.field{max-width:460px;margin:30px auto 0;text-align:left}
+.field{max-width:460px;margin:20px auto 0;text-align:left}
 .field label{display:block;font-size:14px;font-weight:600;color:rgba(255,255,255,.75);margin:0 0 8px 6px}
 .field input{width:100%;height:58px;border-radius:18px;border:2px solid transparent;background:#fff;color:var(--ink);font:500 19px var(--font);padding:0 20px;outline:none;transition:border-color .2s,box-shadow .2s}
 .field input:focus{border-color:var(--wa);box-shadow:0 0 0 5px rgba(37,211,102,.25)}
@@ -183,20 +185,36 @@ h2{font-size:clamp(32px,6.5vw,56px);line-height:1.05;letter-spacing:-.03em;font-
 .thanks{font-size:19px;font-weight:700;color:var(--wa);margin-top:16px;min-height:28px;opacity:0;transform:translateY(8px);transition:all .5s var(--ease)}
 .thanks.show{opacity:1;transform:none}
 
-footer{padding:40px 0 calc(48px + env(safe-area-inset-bottom));text-align:center;color:var(--muted);font-size:16px}
+footer{padding:20px 0 calc(48px + env(safe-area-inset-bottom));text-align:center;color:var(--muted);font-size:16px}
 footer b{color:var(--ink)}
 
 /* reveal */
-.rv{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
-.rv.in{opacity:1;transform:none}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .8s var(--ease),filter .8s var(--ease)}
+.rv.in{opacity:1;transform:none;filter:none}
+h2.rv,.kicker.rv,.hero h1.rv{filter:blur(10px)}
+h2.rv.in,.kicker.rv.in,.hero h1.rv.in{filter:none}
+.rv.zoom{transform:scale(.92) translateY(20px)}
+.rv.from-l{transform:translateX(-40px) rotate(-4deg)}
+.rv.from-r{transform:translateX(40px) rotate(4deg)}
+.rv.zoom.in,.rv.from-l.in,.rv.from-r.in{transform:none}
+.step .ico,.bring .em,.zone .em{transition:transform .7s cubic-bezier(.34,1.56,.64,1) .25s}
+.rv:not(.in) .ico,.rv:not(.in) .em{transform:scale(.4) rotate(-20deg)}
+.score .n{transition:transform .5s cubic-bezier(.34,1.56,.64,1)}
+.score .n.bump{transform:scale(1.18)}
+.roll{position:absolute;left:0;bottom:14px;font-size:30px;line-height:1;pointer-events:none;opacity:0}
+.board.in .roll{animation:roll 2.2s var(--ease) .3s forwards}
+@keyframes roll{0%{opacity:1;transform:translateX(-40px) rotate(0)}85%{opacity:1}100%{opacity:0;transform:translateX(calc(100vw)) rotate(900deg)}}
+.progress{position:absolute;left:0;bottom:-1px;height:3px;width:100%;background:linear-gradient(90deg,var(--pitch),var(--yellow));transform-origin:0 50%;transform:scaleX(0)}
+.marquee .track-wrap{will-change:transform}
 .rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
 
 /* confetti */
 .conf{position:fixed;top:0;left:0;pointer-events:none;z-index:99;font-size:22px;will-change:transform,opacity}
 
 @media (min-width:820px){
-  section{padding:80px 0}
-  .hero{padding-top:140px}
+  section{padding:56px 0}
+  .hero{padding-top:120px}
+  .venue{grid-template-columns:1fr 1fr}
   .hero-grid{grid-template-columns:1.1fr .9fr;gap:56px}
   .players{gap:22px}
   .bento{grid-template-columns:1fr 1fr 1.6fr}
@@ -213,7 +231,6 @@ footer b{color:var(--ink)}
 @media (max-width:520px){
   .wa-btns{grid-template-columns:1fr}
   .venue{grid-template-columns:1fr}
-  .zone{min-height:0}
   .bring .card:last-child{grid-column:1/-1}
 }
 @media (prefers-reduced-motion:reduce){
@@ -237,6 +254,7 @@ footer b{color:var(--ink)}
       <a class="pill-sm" href="#rsvp" data-i18n="navCta">Confirmar</a>
     </div>
   </div>
+  <div class="progress" id="progress"></div>
 </header>
 
 <main id="top">
@@ -264,13 +282,14 @@ footer b{color:var(--ink)}
 <!-- SCOREBOARD -->
 <section style="padding-top:8px">
   <div class="wrap">
-    <div class="board rv">
+    <div class="board rv zoom">
+      <span class="roll" aria-hidden="true">⚽</span>
       <svg class="lines" viewBox="0 0 400 240" preserveAspectRatio="none" aria-hidden="true" fill="none" stroke="#fff" stroke-width="2">
         <rect x="8" y="8" width="384" height="224" rx="4"/><line x1="200" y1="8" x2="200" y2="232"/><circle cx="200" cy="120" r="42"/><circle cx="200" cy="120" r="3" fill="#fff"/>
         <rect x="8" y="70" width="48" height="100"/><rect x="344" y="70" width="48" height="100"/>
       </svg>
       <div class="score" aria-label="Miron 6, Lucas 4">
-        <span class="side"><span class="n">6</span><span class="team">Miron</span></span><span class="colon">:</span><span class="side"><span class="n">4</span><span class="team">Lucas</span></span>
+        <span class="side"><span class="n" data-to="6">6</span><span class="team">Miron</span></span><span class="colon">:</span><span class="side"><span class="n" data-to="4">4</span><span class="team">Lucas</span></span>
       </div>
       <p class="cap" data-i18n="scoreCap">Resultado final: ganham os dois! 🏆</p>
       <p class="count-title" id="countTitle" data-i18n="countTitle">Faltam para o apito inicial</p>
@@ -290,7 +309,7 @@ footer b{color:var(--ink)}
     <span class="kicker rv">🏆 <span data-i18n="duoKicker">A equipa</span></span>
     <h2 class="rv d1" data-i18n="duoTitle">Conhece a dupla</h2>
     <div class="players">
-      <article class="player m rv" tabindex="0">
+      <article class="player m rv from-l" tabindex="0">
         <img src="img/miron.webp?v=2" width="500" height="625" loading="lazy" data-i18n-alt="altMiron" alt="">
         <span class="num">6</span>
         <div class="info">
@@ -298,7 +317,7 @@ footer b{color:var(--ink)}
           <span class="tag" data-i18n="mironTag">1.º A · 6 anos</span>
         </div>
       </article>
-      <article class="player l rv d1" tabindex="0">
+      <article class="player l rv from-r d1" tabindex="0">
         <img src="img/lucas.webp?v=2" width="600" height="750" loading="lazy" data-i18n-alt="altLucas" alt="">
         <span class="num">4</span>
         <div class="info">
@@ -313,6 +332,7 @@ footer b{color:var(--ink)}
 
 <!-- MARQUEE -->
 <div class="marquee rv" aria-hidden="true">
+  <div class="track-wrap" id="mq">
   <div class="track">
     <img src="img/g-palms.webp?v=2" alt="" loading="lazy" width="640" height="800">
     <img src="img/miron.webp?v=2" alt="" loading="lazy" width="500" height="625">
@@ -327,6 +347,7 @@ footer b{color:var(--ink)}
     <img src="img/g-miron.webp?v=2" alt="" loading="lazy" width="560" height="700">
     <img src="img/lucas.webp?v=2" alt="" loading="lazy" width="560" height="700">
   </div>
+  </div>
 </div>
 
 <!-- WHEN & WHERE -->
@@ -335,15 +356,15 @@ footer b{color:var(--ink)}
     <span class="kicker rv">📍 <span data-i18n="whenKicker">Quando e onde</span></span>
     <h2 class="rv d1" data-i18n="whenTitle">Marca na agenda</h2>
     <div class="bento">
-      <div class="card date-card rv">
+      <div class="card date-card rv zoom">
         <span class="lbl" data-i18n="lblDay">Dia</span>
         <span class="big" data-i18n="bigDay">Sáb, 7 nov</span>
       </div>
-      <div class="card time-card rv d1">
+      <div class="card time-card rv zoom d1">
         <span class="lbl" data-i18n="lblTime">Hora</span>
         <span class="big" data-i18n="bigTime">15:00–18:00</span>
       </div>
-      <div class="card place rv d2">
+      <div class="card place rv zoom d2">
         <span class="lbl" data-i18n="lblPlace">Local</span>
         <span class="big" style="font-size:clamp(26px,5vw,36px)">O Reino</span>
         <span class="addr">Rua Professor Alfredo de Sousa 4A, 1600-188 Lisboa</span>
@@ -362,13 +383,13 @@ footer b{color:var(--ink)}
   <div class="wrap">
     <span class="kicker rv">📣 <span data-i18n="progKicker">Programa</span></span>
     <h2 class="rv d1" data-i18n="progTitle">O plano de jogo</h2>
-    <div class="timeline">
+    <div class="timeline" data-stagger>
       <div class="step rv"><div class="ico" style="background:#DDF5E4">🥅</div><div><time>15:00</time><h3 data-i18n="p1t">Entrada em campo</h3><p data-i18n="p1">Chegada e aquecimento no castelo, no parque e no trampolim.</p></div></div>
-      <div class="step rv d1"><div class="ico" style="background:#FFE7DC">🎨</div><div><time>15:30</time><h3 data-i18n="p2t">Primeira parte</h3><p data-i18n="p2">Pinturas faciais e modelagem de balões com a nossa animadora.</p></div></div>
+      <div class="step rv"><div class="ico" style="background:#FFE7DC">🎨</div><div><time>15:30</time><h3 data-i18n="p2t">Primeira parte</h3><p data-i18n="p2">Pinturas faciais e modelagem de balões com a nossa animadora.</p></div></div>
       <div class="step rv"><div class="ico" style="background:var(--yellow-soft)">🥪</div><div><time data-i18n="p3time">Intervalo</time><h3 data-i18n="p3t">Lanche</h3><p data-i18n="p3">Uma pausa para recuperar energias.</p></div></div>
-      <div class="step rv d1"><div class="ico" style="background:#EFE7FF">⚽</div><div><time data-i18n="p4time">2.ª parte</time><h3 data-i18n="p4t">Jogo livre</h3><p data-i18n="p4">Mini campo de futebol, castelo e discoteca.</p></div></div>
+      <div class="step rv"><div class="ico" style="background:#EFE7FF">⚽</div><div><time data-i18n="p4time">2.ª parte</time><h3 data-i18n="p4t">Jogo livre</h3><p data-i18n="p4">Mini campo de futebol, castelo e discoteca.</p></div></div>
       <div class="step rv"><div class="ico" style="background:var(--blue-soft)">🎂</div><div><time>~17:30</time><h3 data-i18n="p5t">Taça e Parabéns</h3><p data-i18n="p5">Bolo e “Parabéns a você” — a dobrar!</p></div></div>
-      <div class="step rv d1"><div class="ico" style="background:#F2F2F2">🏁</div><div><time>18:00</time><h3 data-i18n="p6t">Apito final</h3><p data-i18n="p6">Hora de ir buscar os craques.</p></div></div>
+      <div class="step rv"><div class="ico" style="background:#F2F2F2">🏁</div><div><time>18:00</time><h3 data-i18n="p6t">Apito final</h3><p data-i18n="p6">Hora de ir buscar os craques.</p></div></div>
     </div>
   </div>
 </section>
@@ -379,8 +400,8 @@ footer b{color:var(--ink)}
     <span class="kicker rv">🏰 <span data-i18n="venueKicker">O estádio</span></span>
     <h2 class="rv d1" data-i18n="venueTitle">Tudo para um grande jogo</h2>
     <div class="venue">
-      <div class="zone in rv"><span class="em">🏰</span><span class="m2">110 m²</span><h3 data-i18n="inT">Lá dentro</h3><p data-i18n="inP">Castelo encantado, parque, casinha de dois andares e mini discoteca.</p></div>
-      <div class="zone out rv d1"><span class="em">🤸</span><span class="m2">100 m²</span><h3 data-i18n="outT">Lá fora</h3><p data-i18n="outP">Trampolim e mini campo de futebol.</p></div>
+      <div class="zone in rv from-l"><span class="em">🏰</span><span class="m2">110 m²</span><h3 data-i18n="inT">Lá dentro</h3><p data-i18n="inP">Castelo encantado, parque, casinha de dois andares e mini discoteca.</p></div>
+      <div class="zone out rv from-r d1"><span class="em">🤸</span><span class="m2">100 m²</span><h3 data-i18n="outT">Lá fora</h3><p data-i18n="outP">Trampolim e mini campo de futebol.</p></div>
     </div>
     <p class="rain rv" data-i18n="rain">Se chover, a festa continua lá dentro! 🌧️➡️🎉</p>
   </div>
@@ -389,7 +410,7 @@ footer b{color:var(--ink)}
 <!-- PARENTS -->
 <section>
   <div class="wrap">
-    <div class="parents rv">
+    <div class="parents rv zoom">
       <h2 data-i18n="parT">Uma nota para os pais 💛</h2>
       <p data-i18n="parP"></p>
       <div class="times">
@@ -405,12 +426,12 @@ footer b{color:var(--ink)}
   <div class="wrap">
     <span class="kicker rv">🎒 <span data-i18n="bringKicker">Bom saber</span></span>
     <h2 class="rv d1" data-i18n="bringTitle">Antes do jogo</h2>
-    <div class="bring">
+    <div class="bring" data-stagger>
       <div class="card rv"><div class="em">🧦</div><h3 data-i18n="b1t">Meias obrigatórias</h3><p data-i18n="b1">No Reino brinca-se sem sapatos.</p></div>
-      <div class="card rv d1"><div class="em">👕</div><h3 data-i18n="b2t">Roupa confortável</h3><p data-i18n="b2">Que se possa sujar — as pinturas saem com água e sabão.</p></div>
-      <div class="card rv d2"><div class="em">🧸</div><h3 data-i18n="b3t">Brinquedos em casa</h3><p data-i18n="b3">No Reino há muito com que brincar.</p></div>
+      <div class="card rv"><div class="em">👕</div><h3 data-i18n="b2t">Roupa confortável</h3><p data-i18n="b2">Que se possa sujar — as pinturas saem com água e sabão.</p></div>
+      <div class="card rv"><div class="em">🧸</div><h3 data-i18n="b3t">Brinquedos em casa</h3><p data-i18n="b3">No Reino há muito com que brincar.</p></div>
       <div class="card rv"><div class="em">🥜</div><h3 data-i18n="b4t">Alergias?</h3><p data-i18n="b4">Digam-nos na mensagem de confirmação.</p></div>
-      <div class="card rv d1"><div class="em">🌧️</div><h3 data-i18n="b5t">Se chover</h3><p data-i18n="b5">A zona exterior pode fechar — a diversão continua lá dentro.</p></div>
+      <div class="card rv"><div class="em">🌧️</div><h3 data-i18n="b5t">Se chover</h3><p data-i18n="b5">A zona exterior pode fechar — a diversão continua lá dentro.</p></div>
     </div>
   </div>
 </section>
@@ -418,7 +439,7 @@ footer b{color:var(--ink)}
 <!-- RSVP -->
 <section id="rsvp">
   <div class="wrap">
-    <div class="rsvp rv">
+    <div class="rsvp rv zoom">
       <h2 data-i18n="rsvpT">Convocatória! 📣</h2>
       <p class="lead" data-i18n="rsvpP"></p>
       <div class="field" id="field">
@@ -594,8 +615,28 @@ footer b{color:var(--ink)}
     document.querySelectorAll(".rv").forEach(el => io.observe(el));
   } else document.querySelectorAll(".rv").forEach(el => el.classList.add("in"));
 
+  // stagger children
+  document.querySelectorAll("[data-stagger]").forEach(c => [...c.children].forEach((el, i) => el.style.transitionDelay = (i % 6) * 70 + "ms"));
+
+  // scoreboard count-up when revealed
+  const board = document.querySelector(".board");
+  if (board && !reduce && "IntersectionObserver" in window) {
+    board.querySelectorAll(".n").forEach(n => n.textContent = "0");
+    const bo = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return; bo.disconnect();
+      board.querySelectorAll(".n").forEach((n, k) => {
+        const to = +n.dataset.to; let v = 0;
+        setTimeout(function step() {
+          n.textContent = ++v; n.classList.add("bump"); setTimeout(() => n.classList.remove("bump"), 160);
+          if (v < to) setTimeout(step, 170);
+        }, 450 + k * 250);
+      });
+    }), { threshold: .4 });
+    bo.observe(board);
+  }
+
   // hero parallax
-  const hp = $("heroPhoto");
+  const hp = $("heroPhoto"), prog = $("progress"), mq = $("mq"), mqBox = document.querySelector(".marquee");
   if (!reduce) {
     let ticking = false;
     addEventListener("scroll", () => {
@@ -603,6 +644,10 @@ footer b{color:var(--ink)}
       requestAnimationFrame(() => {
         const y = Math.min(scrollY, 700);
         hp.style.transform = `translateY(${y * -0.08}px) scale(${1 - y * 0.00012})`;
+        const max = document.documentElement.scrollHeight - innerHeight;
+        prog.style.transform = `scaleX(${max > 0 ? scrollY / max : 0})`;
+        const r = mqBox.getBoundingClientRect();
+        if (r.bottom > 0 && r.top < innerHeight) mq.style.transform = `translateX(${(r.top - innerHeight) * 0.35}px)`;
         ticking = false;
       });
     }, { passive: true });
