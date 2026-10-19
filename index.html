@@ -68,12 +68,17 @@ h2{font-size:clamp(28px,6vw,52px);line-height:1.05;letter-spacing:-.03em;font-we
 .hero h1 .ball{display:inline-block;animation:bounce 2.4s var(--ease) infinite}
 .hero p.sub{font-size:clamp(17px,2.4vw,22px);color:#3A3A3C;margin-top:12px;max-width:560px}
 .hero p.sub b{color:var(--ink)}
-.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.facts{display:grid;gap:8px;margin-top:18px;max-width:520px}
+.fact{display:flex;align-items:center;gap:14px;background:#fff;border-radius:18px;padding:12px 16px;box-shadow:var(--shadow)}
+.fact .fi{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;font-size:22px;flex:none}
+.fact small{display:block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);line-height:1.2}
+.fact b{display:block;font-size:clamp(19px,2.6vw,22px);letter-spacing:-.01em;line-height:1.25;font-variant-numeric:tabular-nums}
+.f-date .fi{background:var(--yellow)}.f-time .fi{background:var(--ink)}.f-place .fi{background:#DDF5E4}
 .hero-photo{position:relative;will-change:transform}
 .hero-photo img{width:100%;height:auto;max-height:58svh;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r-xl);box-shadow:0 30px 80px rgba(14,72,38,.22)}
 .chip{position:absolute;background:rgba(255,255,255,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-radius:18px;padding:10px 14px;font-weight:700;font-size:15px;box-shadow:0 8px 30px rgba(0,0,0,.12);display:flex;gap:8px;align-items:center;font-variant-numeric:tabular-nums}
 .chip small{display:block;font-weight:600;font-size:12px;color:var(--muted)}
-.chip.c1{left:-8px;top:8%}
 .chip.c2{right:-8px;bottom:9%}
 @keyframes bounce{0%,100%{transform:translateY(0) rotate(0)}30%{transform:translateY(-18%) rotate(40deg)}55%{transform:translateY(0) rotate(80deg)}70%{transform:translateY(-6%) rotate(90deg)}}
 
@@ -263,9 +268,14 @@ h2.rv.in,.kicker.rv.in,.hero h1.rv.in{filter:none}
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <span class="eyebrow rv" data-i18n="eyebrow">Dois irmãos · Uma equipa · Uma festa a dobrar!</span>
-      <h1 class="rv d1"><span data-i18n="h1">Dois aniversários, uma só festa!</span> <span class="ball" aria-hidden="true">⚽</span></h1>
+      <span class="eyebrow rv" data-i18n="eyebrow">🎂 Convite · Festa de aniversário</span>
+      <h1 class="rv d1"><span data-i18n="h1">O Miron faz 6 e o Lucas faz 4!</span> <span class="ball" aria-hidden="true">⚽</span></h1>
       <p class="sub rv d2" data-i18n="sub"></p>
+      <div class="facts rv d2">
+        <div class="fact f-date"><span class="fi">📅</span><div><small data-i18n="fDateL">Quando</small><b data-i18n="fDate">Sábado, 7 de novembro</b></div></div>
+        <div class="fact f-time"><span class="fi">🕒</span><div><small data-i18n="fTimeL">Hora</small><b data-i18n="fTime">15:00 – 18:00</b></div></div>
+        <div class="fact f-place"><span class="fi">📍</span><div><small data-i18n="fPlaceL">Onde</small><b>O Reino, Telheiras</b></div></div>
+      </div>
       <div class="cta rv d3">
         <a class="btn btn-dark" href="#rsvp" data-focus-rsvp data-i18n="heroCta">Aceitar a convocatória</a>
         <a class="btn btn-light" href="#when" data-i18n="heroMore">Quando e onde</a>
@@ -273,7 +283,6 @@ h2.rv.in,.kicker.rv.in,.hero h1.rv.in{filter:none}
     </div>
     <div class="hero-photo rv d2" id="heroPhoto">
       <img src="img/hero.webp?v=2" width="760" height="950" fetchpriority="high" data-i18n-alt="altHero" alt="">
-      <div class="chip c1">📅 <div><span data-i18n="chipDate">Sáb, 7 nov</span><small>15:00–18:00</small></div></div>
       <div class="chip c2">🎂 <div>6 + 4<small data-i18n="chipAges">anos de craques</small></div></div>
     </div>
   </div>
@@ -472,9 +481,10 @@ h2.rv.in,.kicker.rv.in,.hero h1.rv.in{filter:none}
   const T = {
     pt: {
       navCta: "Confirmar",
-      eyebrow: "Dois irmãos · Uma equipa · Uma festa a dobrar!",
-      h1: "Dois aniversários, uma só festa!",
-      sub: "Os manos <b>Miron</b> (6 anos, 1.º A) e <b>Lucas</b> (4 anos, Sala Azul) juntam as velas e entram em campo lado a lado — e queremos-te na nossa equipa!",
+      eyebrow: "🎂 Convite · Festa de aniversário",
+      h1: "O Miron faz 6 e o Lucas faz 4!",
+      fDateL: "Quando", fDate: "Sábado, 7 de novembro", fTimeL: "Hora", fTime: "15:00 – 18:00", fPlaceL: "Onde",
+      sub: "Dois irmãos, uma só festa de aniversário com tema de futebol — <b>Miron</b> (1.º A) e <b>Lucas</b> (Sala Azul) querem-te na equipa!",
       heroCta: "Aceitar a convocatória", heroMore: "Quando e onde",
       chipDate: "Sáb, 7 nov", chipAges: "anos de craques",
       altHero: "Miron e Lucas, os dois aniversariantes, lado a lado",
@@ -521,9 +531,10 @@ h2.rv.in,.kicker.rv.in,.hero h1.rv.in{filter:none}
     },
     en: {
       navCta: "RSVP",
-      eyebrow: "Two brothers · One team · Double the party!",
-      h1: "Two birthdays, one big party!",
-      sub: "Brothers <b>Miron</b> (6, Class 1A) and <b>Lucas</b> (4, Sala Azul) are teaming up to blow out their candles together — and we want you on our team!",
+      eyebrow: "🎂 Invitation · Birthday party",
+      h1: "Miron turns 6, Lucas turns 4!",
+      fDateL: "When", fDate: "Saturday, 7 November", fTimeL: "Time", fTime: "3:00 – 6:00 pm", fPlaceL: "Where",
+      sub: "Two brothers, one football-themed birthday party — <b>Miron</b> (Class 1A) and <b>Lucas</b> (Sala Azul) want you on their team!",
       heroCta: "Accept the call-up", heroMore: "When & where",
       chipDate: "Sat, 7 Nov", chipAges: "years of little stars",
       altHero: "Miron and Lucas, the two birthday boys, side by side",
