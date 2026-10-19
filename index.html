@@ -68,13 +68,14 @@ h2{font-size:clamp(28px,6vw,52px);line-height:1.05;letter-spacing:-.03em;font-we
 .hero h1 .ball{display:inline-block;animation:bounce 2.4s var(--ease) infinite}
 .hero p.sub{font-size:clamp(17px,2.4vw,22px);color:#3A3A3C;margin-top:12px;max-width:560px}
 .hero p.sub b{color:var(--ink)}
-.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
-.facts{display:grid;gap:8px;margin-top:18px;max-width:520px}
-.fact{display:flex;align-items:center;gap:14px;background:#fff;border-radius:18px;padding:12px 16px;box-shadow:var(--shadow)}
-.fact .fi{width:44px;height:44px;border-radius:13px;display:grid;place-items:center;font-size:22px;flex:none}
-.fact small{display:block;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);line-height:1.2}
-.fact b{display:block;font-size:clamp(19px,2.6vw,22px);letter-spacing:-.01em;line-height:1.25;font-variant-numeric:tabular-nums}
-.f-date .fi{background:var(--yellow)}.f-time .fi{background:var(--ink)}.f-place .fi{background:#DDF5E4}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.when-card{margin-top:14px;background:#fff;border-radius:20px;padding:12px 14px;box-shadow:var(--shadow);max-width:460px}
+.wc-line{display:flex;flex-wrap:wrap;gap:2px 12px;font-size:17px;line-height:1.35}
+.wc-line b,.wc-place b{font-weight:700}
+.wc-place{font-size:15px;color:#3A3A3C;margin-top:2px}
+.wc-btns{display:flex;gap:8px;margin-top:10px}
+.mini{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;padding:0 12px;border-radius:999px;border:0;background:#F2F2F4;color:var(--ink);font:600 14px var(--font);text-decoration:none;cursor:pointer;white-space:nowrap;-webkit-tap-highlight-color:transparent}
+.mini:active{transform:scale(.97)}
 .hero-photo{position:relative;will-change:transform}
 .hero-photo img{width:100%;height:auto;max-height:58svh;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r-xl);box-shadow:0 30px 80px rgba(14,72,38,.22)}
 .chip{position:absolute;background:rgba(255,255,255,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-radius:18px;padding:10px 14px;font-weight:700;font-size:15px;box-shadow:0 8px 30px rgba(0,0,0,.12);display:flex;gap:8px;align-items:center;font-variant-numeric:tabular-nums}
@@ -126,8 +127,9 @@ h2{font-size:clamp(28px,6vw,52px);line-height:1.05;letter-spacing:-.03em;font-we
 
 /* bento: when & where */
 .bento{display:grid;gap:12px;margin-top:18px;grid-template-columns:1fr 1fr}
-.bento .card{display:flex;flex-direction:column;gap:6px}
-.bento .big{font-size:clamp(26px,6vw,46px);font-weight:800;letter-spacing:-.03em;line-height:1.05;font-variant-numeric:tabular-nums}
+.bento .card{display:flex;flex-direction:column;gap:2px}
+.bento .date-card,.bento .time-card{padding:14px 16px}
+.bento .big{font-size:clamp(22px,5vw,40px);font-weight:800;letter-spacing:-.03em;line-height:1.05;font-variant-numeric:tabular-nums}
 .bento .lbl{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
 .bento .place{grid-column:1/-1}
 .bento .place .addr{font-size:17px;color:#3A3A3C}
@@ -209,8 +211,38 @@ h2.rv.in,.kicker.rv.in,.hero h1.rv.in{filter:none}
 .roll{position:absolute;left:0;bottom:14px;font-size:30px;line-height:1;pointer-events:none;opacity:0}
 .board.in .roll{animation:roll 2.2s var(--ease) .3s forwards}
 @keyframes roll{0%{opacity:1;transform:translateX(-40px) rotate(0)}85%{opacity:1}100%{opacity:0;transform:translateX(calc(100vw)) rotate(900deg)}}
-.progress{position:absolute;left:0;bottom:-1px;height:3px;width:100%;background:linear-gradient(90deg,var(--pitch),var(--yellow));transform-origin:0 50%;transform:scaleX(0)}
+.progress{position:absolute;left:0;bottom:-1px;height:3px;width:100%;background:linear-gradient(90deg,var(--pitch),var(--yellow));clip-path:inset(-20px 100% -20px 0)}
 .marquee .track-wrap{will-change:transform}
+body{transition:background-color .9s ease}
+section{position:relative}
+.wrap{position:relative;z-index:1}
+[data-fx]{will-change:transform;transition:none!important}
+.hero-photo.rv{transition:opacity .8s var(--ease),filter .8s var(--ease)!important}
+.progress .pball{position:absolute;right:-9px;top:-8px;font-size:16px;line-height:1;transform-origin:50% 50%}
+/* floating deco */
+.deco{position:absolute;z-index:0;pointer-events:none;line-height:1;will-change:transform;user-select:none}
+.deco i{display:block;font-style:normal;animation:bob 4.5s ease-in-out infinite}
+.deco:nth-of-type(2n) i{animation-duration:5.5s;animation-delay:-1.2s}
+.deco:nth-of-type(3n) i{animation-duration:6.2s;animation-delay:-2.4s}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-14px) rotate(8deg)}}
+/* big moving words */
+.band{overflow:hidden;padding:18px 0 6px;position:relative}
+.band .row{display:flex;gap:28px;white-space:nowrap;font-weight:900;font-size:clamp(52px,15vw,120px);letter-spacing:-.04em;line-height:1.02;will-change:transform}
+.band .row span{flex:none}
+.band .row .o{color:transparent;-webkit-text-stroke:2px var(--ink)}
+.band .row .g{color:var(--pitch)}
+.band .row .y{color:var(--yellow);-webkit-text-stroke:2px var(--ink)}
+/* timeline track with rolling ball */
+.timeline{position:relative}
+.tl-line,.tl-fill{position:absolute;left:37px;top:30px;bottom:30px;width:3px;border-radius:3px;background:var(--line);z-index:0}
+.tl-fill{background:linear-gradient(var(--pitch),var(--yellow));transform-origin:50% 0;transform:scaleY(0);bottom:30px}
+.tl-ball{position:absolute;left:24px;top:18px;font-size:28px;line-height:1;z-index:2;will-change:transform;filter:drop-shadow(0 4px 6px rgba(0,0,0,.2))}
+.step{position:relative;z-index:1;transition:box-shadow .4s,transform .4s var(--ease)!important}
+.step .ico{transition:transform .5s cubic-bezier(.34,1.56,.64,1),filter .4s!important;filter:grayscale(.9) opacity(.55)}
+.step.lit .ico{filter:none;transform:scale(1.08)}
+.step.lit{box-shadow:0 1px 2px rgba(0,0,0,.04),0 14px 40px rgba(30,123,58,.14)}
+@media (min-width:820px){.tl-line,.tl-fill,.tl-ball{display:none}.step .ico{filter:none}}
+@media (prefers-reduced-motion:reduce){.deco,.tl-ball{display:none}.step .ico{filter:none}}
 .rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
 
 /* confetti */
@@ -259,26 +291,32 @@ h2.rv.in,.kicker.rv.in,.hero h1.rv.in{filter:none}
       <a class="pill-sm" href="#rsvp" data-i18n="navCta">Confirmar</a>
     </div>
   </div>
-  <div class="progress" id="progress"></div>
+  <div class="progress" id="progress"><span class="pball" id="pball">⚽</span></div>
 </header>
 
 <main id="top">
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero" data-bg="#EEF8FB">
+  <span class="deco" data-speed="-0.25" style="top:110px;right:6%;font-size:34px" aria-hidden="true"><i>⚽</i></span>
+  <span class="deco" data-speed="-0.45" style="top:auto;bottom:22%;right:-6px;font-size:36px" aria-hidden="true"><i>🎈</i></span>
+  <span class="deco" data-speed="-0.15" style="bottom:6%;left:2%;font-size:24px" aria-hidden="true"><i>⭐</i></span>
+  <span class="deco" data-speed="-0.6" style="top:64px;right:28%;font-size:20px" aria-hidden="true"><i>🎉</i></span>
   <div class="wrap hero-grid">
     <div>
       <span class="eyebrow rv" data-i18n="eyebrow">🎂 Convite · Festa de aniversário</span>
       <h1 class="rv d1"><span data-i18n="h1">O Miron faz 6 e o Lucas faz 4!</span> <span class="ball" aria-hidden="true">⚽</span></h1>
       <p class="sub rv d2" data-i18n="sub"></p>
-      <div class="facts rv d2">
-        <div class="fact f-date"><span class="fi">📅</span><div><small data-i18n="fDateL">Quando</small><b data-i18n="fDate">Sábado, 7 de novembro</b></div></div>
-        <div class="fact f-time"><span class="fi">🕒</span><div><small data-i18n="fTimeL">Hora</small><b data-i18n="fTime">15:00 – 18:00</b></div></div>
-        <div class="fact f-place"><span class="fi">📍</span><div><small data-i18n="fPlaceL">Onde</small><b>O Reino, Telheiras</b></div></div>
+      <div class="when-card rv d2">
+        <div class="wc-line"><span>📅 <b data-i18n="fDate">Sáb, 7 nov</b></span><span class="wc-time">🕒 <b data-i18n="fTime">15:00–18:00</b></span></div>
+        <div class="wc-place">📍 <b>O Reino</b> · Telheiras, Lisboa</div>
+        <div class="wc-btns">
+          <button class="mini js-cal" type="button" data-i18n="miniCal">📅 Calendário</button>
+          <a class="mini" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Professor+Alfredo+de+Sousa+4A,+1600-188+Lisboa" data-i18n="miniMap">📍 Google Maps</a>
+        </div>
       </div>
       <div class="cta rv d3">
         <a class="btn btn-dark" href="#rsvp" data-focus-rsvp data-i18n="heroCta">Aceitar a convocatória</a>
-        <a class="btn btn-light" href="#when" data-i18n="heroMore">Quando e onde</a>
       </div>
     </div>
     <div class="hero-photo rv d2" id="heroPhoto">
@@ -289,7 +327,7 @@ h2.rv.in,.kicker.rv.in,.hero h1.rv.in{filter:none}
 </section>
 
 <!-- SCOREBOARD -->
-<section style="padding-top:8px">
+<section style="padding-top:8px" data-bg="#F2F7F3">
   <div class="wrap">
     <div class="board rv zoom">
       <span class="roll" aria-hidden="true">⚽</span>
@@ -313,12 +351,14 @@ h2.rv.in,.kicker.rv.in,.hero h1.rv.in{filter:none}
 </section>
 
 <!-- DUO -->
-<section>
+<section data-bg="#F7F7F7">
+  <span class="deco" data-speed="-0.35" style="top:20px;right:8%;font-size:38px" aria-hidden="true"><i>🎈</i></span>
+  <span class="deco" data-speed="-0.2" style="bottom:40px;left:4%;font-size:28px" aria-hidden="true"><i>⚽</i></span>
   <div class="wrap">
     <span class="kicker rv">🏆 <span data-i18n="duoKicker">A equipa</span></span>
     <h2 class="rv d1" data-i18n="duoTitle">Conhece a dupla</h2>
     <div class="players">
-      <article class="player m rv from-l" tabindex="0">
+      <article class="player m" data-fx="tilt-l" tabindex="0">
         <img src="img/miron.webp?v=3" width="600" height="750" loading="lazy" data-i18n-alt="altMiron" alt="">
         <span class="num">6</span>
         <div class="info">
@@ -326,7 +366,7 @@ h2.rv.in,.kicker.rv.in,.hero h1.rv.in{filter:none}
           <span class="tag" data-i18n="mironTag">1.º A · 6 anos</span>
         </div>
       </article>
-      <article class="player l rv from-r d1" tabindex="0">
+      <article class="player l" data-fx="tilt-r" tabindex="0">
         <img src="img/lucas.webp?v=2" width="600" height="750" loading="lazy" data-i18n-alt="altLucas" alt="">
         <span class="num">4</span>
         <div class="info">
@@ -359,21 +399,28 @@ h2.rv.in,.kicker.rv.in,.hero h1.rv.in{filter:none}
   </div>
 </div>
 
+<!-- BIG WORDS -->
+<div class="band" aria-hidden="true">
+  <div class="row" data-band="-1"><span data-i18n="w1">FESTA</span><span class="o">⚽</span><span class="g" data-i18n="w2">GOLO!</span><span class="o" data-i18n="w3">PARABÉNS</span><span class="y">6 + 4</span><span data-i18n="w1b">FESTA</span><span class="g" data-i18n="w2b">GOLO!</span></div>
+  <div class="row" data-band="1"><span class="o" data-i18n="w4">MIRON</span><span class="y">&amp;</span><span data-i18n="w5">LUCAS</span><span class="g">🏆</span><span class="o" data-i18n="w6">CRAQUES</span><span data-i18n="w4b">MIRON</span><span class="y">&amp;</span><span data-i18n="w5b">LUCAS</span></div>
+</div>
+
 <!-- WHEN & WHERE -->
-<section id="when">
+<section id="when" data-bg="#FFFBEA">
+  <span class="deco" data-speed="-0.3" style="top:24px;right:10%;font-size:30px" aria-hidden="true"><i>📅</i></span>
   <div class="wrap">
     <span class="kicker rv">📍 <span data-i18n="whenKicker">Quando e onde</span></span>
     <h2 class="rv d1" data-i18n="whenTitle">Marca na agenda</h2>
     <div class="bento">
-      <div class="card date-card rv zoom">
+      <div class="card date-card" data-fx="pop-l">
         <span class="lbl" data-i18n="lblDay">Dia</span>
         <span class="big" data-i18n="bigDay">Sáb, 7 nov</span>
       </div>
-      <div class="card time-card rv zoom d1">
+      <div class="card time-card" data-fx="pop-r">
         <span class="lbl" data-i18n="lblTime">Hora</span>
-        <span class="big" data-i18n="bigTime">15:00–18:00</span>
+        <span class="big" data-i18n="bigTime">15–18h</span>
       </div>
-      <div class="card place rv zoom d2">
+      <div class="card place" data-fx="rise">
         <span class="lbl" data-i18n="lblPlace">Local</span>
         <span class="big" style="font-size:clamp(26px,5vw,36px)">O Reino</span>
         <span class="addr">Rua Professor Alfredo de Sousa 4A, 1600-188 Lisboa</span>
@@ -388,11 +435,14 @@ h2.rv.in,.kicker.rv.in,.hero h1.rv.in{filter:none}
 </section>
 
 <!-- PROGRAM -->
-<section>
+<section data-bg="#F1FAF3">
+  <span class="deco" data-speed="-0.4" style="top:30px;right:6%;font-size:36px" aria-hidden="true"><i>🎈</i></span>
+  <span class="deco" data-speed="-0.2" style="top:45%;right:3%;font-size:22px" aria-hidden="true"><i>⭐</i></span>
   <div class="wrap">
     <span class="kicker rv">📣 <span data-i18n="progKicker">Programa</span></span>
     <h2 class="rv d1" data-i18n="progTitle">O plano de jogo</h2>
-    <div class="timeline" data-stagger>
+    <div class="timeline" data-stagger id="tl">
+      <span class="tl-line" aria-hidden="true"></span><span class="tl-fill" id="tlFill" aria-hidden="true"></span><span class="tl-ball" id="tlBall" aria-hidden="true">⚽</span>
       <div class="step rv"><div class="ico" style="background:#DDF5E4">🥅</div><div><time>15:00</time><h3 data-i18n="p1t">Entrada em campo</h3><p data-i18n="p1">Chegada e aquecimento no castelo, no parque e no trampolim.</p></div></div>
       <div class="step rv"><div class="ico" style="background:#FFE7DC">🎨</div><div><time>15:30</time><h3 data-i18n="p2t">Primeira parte</h3><p data-i18n="p2">Pinturas faciais e modelagem de balões com a nossa animadora.</p></div></div>
       <div class="step rv"><div class="ico" style="background:var(--yellow-soft)">🥪</div><div><time data-i18n="p3time">Intervalo</time><h3 data-i18n="p3t">Lanche</h3><p data-i18n="p3">Uma pausa para recuperar energias.</p></div></div>
@@ -404,20 +454,21 @@ h2.rv.in,.kicker.rv.in,.hero h1.rv.in{filter:none}
 </section>
 
 <!-- VENUE -->
-<section>
+<section data-bg="#F6F2FF">
+  <span class="deco" data-speed="-0.3" style="top:20px;right:8%;font-size:32px" aria-hidden="true"><i>🤸</i></span>
   <div class="wrap">
     <span class="kicker rv">🏰 <span data-i18n="venueKicker">O estádio</span></span>
     <h2 class="rv d1" data-i18n="venueTitle">Tudo para um grande jogo</h2>
     <div class="venue">
-      <div class="zone in rv from-l"><span class="em">🏰</span><span class="m2">110 m²</span><h3 data-i18n="inT">Lá dentro</h3><p data-i18n="inP">Castelo encantado, parque, casinha de dois andares e mini discoteca.</p></div>
-      <div class="zone out rv from-r d1"><span class="em">🤸</span><span class="m2">100 m²</span><h3 data-i18n="outT">Lá fora</h3><p data-i18n="outP">Trampolim e mini campo de futebol.</p></div>
+      <div class="zone in" data-fx="slide-l"><span class="em">🏰</span><span class="m2">110 m²</span><h3 data-i18n="inT">Lá dentro</h3><p data-i18n="inP">Castelo encantado, parque, casinha de dois andares e mini discoteca.</p></div>
+      <div class="zone out" data-fx="slide-r"><span class="em">🤸</span><span class="m2">100 m²</span><h3 data-i18n="outT">Lá fora</h3><p data-i18n="outP">Trampolim e mini campo de futebol.</p></div>
     </div>
     <p class="rain rv" data-i18n="rain">Se chover, a festa continua lá dentro! 🌧️➡️🎉</p>
   </div>
 </section>
 
 <!-- PARENTS -->
-<section>
+<section data-bg="#FFF8E6">
   <div class="wrap">
     <div class="parents rv zoom">
       <h2 data-i18n="parT">Uma nota para os pais 💛</h2>
@@ -431,7 +482,7 @@ h2.rv.in,.kicker.rv.in,.hero h1.rv.in{filter:none}
 </section>
 
 <!-- BRING -->
-<section style="padding-top:24px">
+<section style="padding-top:24px" data-bg="#F7F7F7">
   <div class="wrap">
     <span class="kicker rv">🎒 <span data-i18n="bringKicker">Bom saber</span></span>
     <h2 class="rv d1" data-i18n="bringTitle">Antes do jogo</h2>
@@ -446,7 +497,9 @@ h2.rv.in,.kicker.rv.in,.hero h1.rv.in{filter:none}
 </section>
 
 <!-- RSVP -->
-<section id="rsvp">
+<section id="rsvp" data-bg="#EEF8F1">
+  <span class="deco" data-speed="-0.35" style="top:0;left:6%;font-size:34px" aria-hidden="true"><i>🎉</i></span>
+  <span class="deco" data-speed="-0.5" style="top:10px;right:8%;font-size:30px" aria-hidden="true"><i>⚽</i></span>
   <div class="wrap">
     <div class="rsvp rv zoom">
       <h2 data-i18n="rsvpT">Convocatória! 📣</h2>
@@ -483,10 +536,11 @@ h2.rv.in,.kicker.rv.in,.hero h1.rv.in{filter:none}
       navCta: "Confirmar",
       eyebrow: "🎂 Convite · Festa de aniversário",
       h1: "O Miron faz 6 e o Lucas faz 4!",
-      fDateL: "Quando", fDate: "Sábado, 7 de novembro", fTimeL: "Hora", fTime: "15:00 – 18:00", fPlaceL: "Onde",
+      fDate: "Sáb, 7 nov", fTime: "15:00–18:00", miniCal: "📅 Calendário", miniMap: "📍 Google Maps",
       sub: "Dois irmãos, uma só festa de aniversário com tema de futebol — <b>Miron</b> (1.º A) e <b>Lucas</b> (Sala Azul) querem-te na equipa!",
       heroCta: "Aceitar a convocatória", heroMore: "Quando e onde",
       chipDate: "Sáb, 7 nov", chipAges: "anos de craques",
+      w1: "FESTA", w1b: "FESTA", w2: "GOLO!", w2b: "GOLO!", w3: "PARABÉNS", w4: "MIRON", w4b: "MIRON", w5: "LUCAS", w5b: "LUCAS", w6: "CRAQUES",
       altHero: "Miron e Lucas, os dois aniversariantes, lado a lado",
       scoreCap: "Resultado final: ganham os dois! 🏆",
       countTitle: "Faltam para o apito inicial", countToday: "É hoje! ⚽🎉", countDone: "Obrigado a todos os craques! 💛",
@@ -497,7 +551,7 @@ h2.rv.in,.kicker.rv.in,.hero h1.rv.in{filter:none}
       altMiron: "Miron, o aniversariante de 6 anos", altLucas: "Lucas, o aniversariante de 4 anos",
       duoNote: "Juntos são a melhor dupla do campeonato — e este ano festejam juntos!",
       whenKicker: "Quando e onde", whenTitle: "Marca na agenda",
-      lblDay: "Dia", bigDay: "Sáb, 7 nov", lblTime: "Hora", bigTime: "15:00–18:00", lblPlace: "Local",
+      lblDay: "Dia", bigDay: "Sáb, 7 nov", lblTime: "Hora", bigTime: "15–18h", lblPlace: "Local",
       near: "Telheiras, junto ao Pingo Doce", btnMap: "Abrir no mapa", btnCal: "Adicionar ao calendário",
       progKicker: "Programa", progTitle: "O plano de jogo",
       p1t: "Entrada em campo", p1: "Chegada e aquecimento no castelo, no parque e no trampolim.",
@@ -533,10 +587,11 @@ h2.rv.in,.kicker.rv.in,.hero h1.rv.in{filter:none}
       navCta: "RSVP",
       eyebrow: "🎂 Invitation · Birthday party",
       h1: "Miron turns 6, Lucas turns 4!",
-      fDateL: "When", fDate: "Saturday, 7 November", fTimeL: "Time", fTime: "3:00 – 6:00 pm", fPlaceL: "Where",
+      fDate: "Sat, 7 Nov", fTime: "3–6 pm", miniCal: "📅 Calendar", miniMap: "📍 Google Maps",
       sub: "Two brothers, one football-themed birthday party — <b>Miron</b> (Class 1A) and <b>Lucas</b> (Sala Azul) want you on their team!",
       heroCta: "Accept the call-up", heroMore: "When & where",
       chipDate: "Sat, 7 Nov", chipAges: "years of little stars",
+      w1: "PARTY", w1b: "PARTY", w2: "GOAL!", w2b: "GOAL!", w3: "HAPPY BIRTHDAY", w4: "MIRON", w4b: "MIRON", w5: "LUCAS", w5b: "LUCAS", w6: "STARS",
       altHero: "Miron and Lucas, the two birthday boys, side by side",
       scoreCap: "Final score: they both win! 🏆",
       countTitle: "Until kick-off", countToday: "It's today! ⚽🎉", countDone: "Thank you, little stars! 💛",
@@ -627,7 +682,7 @@ h2.rv.in,.kicker.rv.in,.hero h1.rv.in{filter:none}
   } else document.querySelectorAll(".rv").forEach(el => el.classList.add("in"));
 
   // stagger children
-  document.querySelectorAll("[data-stagger]").forEach(c => [...c.children].forEach((el, i) => el.style.transitionDelay = (i % 6) * 70 + "ms"));
+  document.querySelectorAll("[data-stagger]").forEach(c => [...c.children].filter(el => el.classList.contains("rv") || el.classList.contains("card")).forEach((el, i) => el.style.transitionDelay = (i % 6) * 70 + "ms"));
 
   // scoreboard count-up when revealed
   const board = document.querySelector(".board");
@@ -646,23 +701,87 @@ h2.rv.in,.kicker.rv.in,.hero h1.rv.in{filter:none}
     bo.observe(board);
   }
 
-  // hero parallax
-  const hp = $("heroPhoto"), prog = $("progress"), mq = $("mq"), mqBox = document.querySelector(".marquee");
-  if (!reduce) {
-    let ticking = false;
-    addEventListener("scroll", () => {
-      if (ticking) return; ticking = true;
-      requestAnimationFrame(() => {
-        const y = Math.min(scrollY, 700);
-        hp.style.transform = `translateY(${y * -0.08}px) scale(${1 - y * 0.00012})`;
-        const max = document.documentElement.scrollHeight - innerHeight;
-        prog.style.transform = `scaleX(${max > 0 ? scrollY / max : 0})`;
-        const r = mqBox.getBoundingClientRect();
-        if (r.bottom > 0 && r.top < innerHeight) mq.style.transform = `translateX(${(r.top - innerHeight) * 0.35}px)`;
-        ticking = false;
-      });
-    }, { passive: true });
+  // scroll engine: scrubbed animations tied to finger position
+  const hp = $("heroPhoto"), prog = $("progress"), pball = $("pball"), mq = $("mq"), mqBox = document.querySelector(".marquee");
+  const h1 = document.querySelector(".hero h1");
+  const fx = [...document.querySelectorAll("[data-fx]")];
+  const decos = [...document.querySelectorAll(".deco")];
+  const bands = [...document.querySelectorAll("[data-band]")];
+  const tl = $("tl"), tlFill = $("tlFill"), tlBall = $("tlBall"), steps = tl ? [...tl.querySelectorAll(".step")] : [];
+  const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
+  const ease = t => 1 - Math.pow(1 - t, 3);
+
+  // section background tint
+  if ("IntersectionObserver" in window) {
+    const so = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) document.body.style.backgroundColor = e.target.dataset.bg; }), { rootMargin: "-45% 0px -45% 0px" });
+    document.querySelectorAll("section[data-bg]").forEach(el => so.observe(el));
   }
+
+  function frame() {
+    const vh = innerHeight, y = scrollY;
+    const max = document.documentElement.scrollHeight - vh, pr = max > 0 ? y / max : 0;
+    prog.style.clipPath = `inset(-20px ${100 - pr * 100}% -20px 0)`;
+    pball.style.transform = `translateX(${-(1 - pr) * 0}px) rotate(${y * 0.6}deg)`;
+    pball.style.right = `calc(${100 - pr * 100}% - 9px)`;
+    if (reduce) return;
+
+    // hero: photo lifts and tilts, title drifts
+    const hy = Math.min(y, 800);
+    hp.style.transform = `translateY(${hy * -0.12}px) rotate(${hy * -0.006}deg) scale(${1 + hy * 0.00012})`;
+    h1.style.transform = `translateY(${hy * 0.18}px)`; h1.style.opacity = clamp(1 - hy / 520);
+
+    // cards scrub in with the finger
+    for (const el of fx) {
+      const r = el.getBoundingClientRect();
+      if (r.bottom < -100 || r.top > vh + 100) continue;
+      const t = ease(clamp((vh - r.top) / (vh * 0.55)));
+      const k = 1 - t, type = el.dataset.fx;
+      let tr = "";
+      if (type === "tilt-l") tr = `translate(${-k * 60}%, ${k * 40}px) rotate(${-k * 14}deg) scale(${0.8 + 0.2 * t})`;
+      else if (type === "tilt-r") tr = `translate(${k * 60}%, ${k * 70}px) rotate(${k * 14}deg) scale(${0.8 + 0.2 * t})`;
+      else if (type === "slide-l") tr = `translateX(${-k * 110}%) rotate(${-k * 6}deg)`;
+      else if (type === "slide-r") tr = `translateX(${k * 110}%) rotate(${k * 6}deg)`;
+      else if (type === "pop-l") tr = `translateY(${k * 60}px) rotate(${-k * 10}deg) scale(${0.7 + 0.3 * t})`;
+      else if (type === "pop-r") tr = `translateY(${k * 90}px) rotate(${k * 10}deg) scale(${0.7 + 0.3 * t})`;
+      else if (type === "rise") tr = `translateY(${k * 80}px) scale(${0.9 + 0.1 * t})`;
+      el.style.transform = tr; el.style.opacity = clamp(t * 1.6);
+    }
+
+    // floating emoji parallax
+    for (const d of decos) {
+      const r = d.parentElement.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > vh) continue;
+      d.style.transform = `translateY(${(r.top) * +d.dataset.speed}px)`;
+    }
+
+    // big words slide in opposite directions
+    for (const b of bands) {
+      const r = b.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > vh) continue;
+      const off = (r.top - vh / 2) * 0.9 * +b.dataset.band;
+      b.style.transform = `translateX(${off - (b.dataset.band > 0 ? b.scrollWidth * .35 : 0)}px)`;
+    }
+
+    // marquee follows scroll
+    const mr = mqBox.getBoundingClientRect();
+    if (mr.bottom > 0 && mr.top < vh) mq.style.transform = `translateX(${(mr.top - vh) * 0.35}px)`;
+
+    // timeline: ball rolls down the line and lights steps
+    if (tl && getComputedStyle(tlBall).display !== "none") {
+      const r = tl.getBoundingClientRect();
+      const len = r.height - 60;
+      const t = clamp((vh * 0.6 - r.top - 30) / len);
+      tlFill.style.transform = `scaleY(${t})`;
+      tlBall.style.transform = `translateY(${t * len}px) rotate(${t * len * 2.2}deg)`;
+      const ballY = r.top + 30 + t * len;
+      for (const st of steps) { const sr = st.getBoundingClientRect(); st.classList.toggle("lit", sr.top < ballY + 10); }
+    }
+  }
+  let ticking = false;
+  const onScroll = () => { if (ticking) return; ticking = true; requestAnimationFrame(() => { frame(); ticking = false; }); };
+  addEventListener("scroll", onScroll, { passive: true });
+  addEventListener("resize", onScroll);
+  frame();
 
   // confetti of balls
   function confetti(x, y, n = 22) {
@@ -711,7 +830,7 @@ h2.rv.in,.kicker.rv.in,.hero h1.rv.in{filter:none}
   }));
 
   // calendar (.ics)
-  $("calBtn").addEventListener("click", () => {
+  const addToCal = () => {
     const d = T[lang];
     const ics = [
       "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Miron&Lucas//Party//PT", "CALSCALE:GREGORIAN",
@@ -730,7 +849,8 @@ h2.rv.in,.kicker.rv.in,.hero h1.rv.in{filter:none}
     a.href = URL.createObjectURL(new Blob([ics], { type: "text/calendar;charset=utf-8" }));
     a.download = "festa-miron-lucas.ics";
     document.body.appendChild(a); a.click(); a.remove();
-  });
+  };
+  document.querySelectorAll("#calBtn, .js-cal").forEach(b => b.addEventListener("click", addToCal));
 })();
 </script>
 </body>
