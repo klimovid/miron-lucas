@@ -710,6 +710,9 @@ section{position:relative;scroll-margin-top:64px}
 
   let lang = "pt";
   try { const s = localStorage.getItem("lang"); if (s && T[s]) lang = s; } catch (e) {}
+  // ?lang=ru in a shared link wins over the saved choice
+  const q = new URLSearchParams(location.search).get("lang");
+  if (q && T[q.toLowerCase()]) lang = q.toLowerCase();
 
   function apply(l) {
     lang = l; const d = T[l];
@@ -722,6 +725,9 @@ section{position:relative;scroll-margin-top:64px}
     if (field.classList.contains("err")) err.textContent = d.err;
     tick();
     try { localStorage.setItem("lang", l); } catch (e) {}
+    // keep the address bar shareable: ?lang=xx reflects the current language
+    const u = new URL(location.href); u.searchParams.set("lang", l);
+    history.replaceState(null, "", u.pathname + u.search);
   }
   document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => apply(b.dataset.lang)));
 
