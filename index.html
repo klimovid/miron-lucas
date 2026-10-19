@@ -259,6 +259,11 @@ section{position:relative;scroll-margin-top:64px}
   .timeline{grid-template-columns:1fr 1fr}
   .bring{grid-template-columns:repeat(5,1fr)}
 }
+@media (max-width:440px){
+  .nav-r{gap:6px}
+  .lang button{padding:6px 8px}
+  .nav .pill-sm{padding:8px 11px}
+}
 @media (max-width:380px){
   .nav .pill-sm{display:none}
   .wa-btns{grid-template-columns:1fr}
@@ -287,6 +292,7 @@ section{position:relative;scroll-margin-top:64px}
       <div class="lang" role="group" aria-label="Language">
         <button type="button" data-lang="pt" aria-pressed="true">PT</button>
         <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        <button type="button" data-lang="ru" aria-pressed="false">RU</button>
       </div>
       <a class="pill-sm" href="#rsvp" data-i18n="navCta">Confirmar</a>
     </div>
@@ -336,7 +342,7 @@ section{position:relative;scroll-margin-top:64px}
         <rect x="8" y="70" width="48" height="100"/><rect x="344" y="70" width="48" height="100"/>
       </svg>
       <div class="score" aria-label="Miron 6, Lucas 4">
-        <span class="side"><span class="n" data-to="6">6</span><span class="team">Miron</span></span><span class="colon">:</span><span class="side"><span class="n" data-to="4">4</span><span class="team">Lucas</span></span>
+        <span class="side"><span class="n" data-to="6">6</span><span class="team" data-i18n="nameM">Miron</span></span><span class="colon">:</span><span class="side"><span class="n" data-to="4">4</span><span class="team" data-i18n="nameL">Lucas</span></span>
       </div>
       <p class="cap" data-i18n="scoreCap">Resultado final: ganham os dois! 🏆</p>
       <p class="count-title" id="countTitle" data-i18n="countTitle">Faltam para o apito inicial</p>
@@ -362,7 +368,7 @@ section{position:relative;scroll-margin-top:64px}
         <img src="img/miron.webp?v=3" width="600" height="750" loading="lazy" data-i18n-alt="altMiron" alt="">
         <span class="num">6</span>
         <div class="info">
-          <h3>Miron</h3>
+          <h3 data-i18n="nameM">Miron</h3>
           <span class="tag" data-i18n="mironTag">1.º A · 6 anos</span>
         </div>
       </article>
@@ -370,7 +376,7 @@ section{position:relative;scroll-margin-top:64px}
         <img src="img/lucas.webp?v=2" width="600" height="750" loading="lazy" data-i18n-alt="altLucas" alt="">
         <span class="num">4</span>
         <div class="info">
-          <h3>Lucas</h3>
+          <h3 data-i18n="nameL">Lucas</h3>
           <span class="tag" data-i18n="lucasTag">Sala Azul · 4 anos</span>
         </div>
       </article>
@@ -548,7 +554,7 @@ section{position:relative;scroll-margin-top:64px}
 
   const T = {
     pt: {
-      navCta: "Confirmar",
+      navCta: "Confirmar", nameM: "Miron", nameL: "Lucas",
       eyebrow: "🎂 Convite · Festa de aniversário",
       h1: "O Miron faz 6 e o Lucas faz 4!",
       fDate: "Sáb, 7 nov", fTime: "15:00–18:00", miniCal: "📅 Calendário", miniMap: "📍 Google Maps",
@@ -599,7 +605,7 @@ section{position:relative;scroll-margin-top:64px}
       calTitle: "Festa do Miron e do Lucas ⚽", title: "Festa do Miron e do Lucas ⚽"
     },
     en: {
-      navCta: "RSVP",
+      navCta: "RSVP", nameM: "Miron", nameL: "Lucas",
       eyebrow: "🎂 Invitation · Birthday party",
       h1: "Miron turns 6, Lucas turns 4!",
       fDate: "Sat, 7 Nov", fTime: "3–6 pm", miniCal: "📅 Calendar", miniMap: "📍 Google Maps",
@@ -648,6 +654,57 @@ section{position:relative;scroll-margin-top:64px}
       msg: n => `Hi! Just confirming that ${n} is coming to Miron & Lucas's birthday party on Saturday, 7 November, at 3 pm. See you there!`,
       foot: "With lots of goals and hugs, Miron, Lucas & family ⚽💛",
       calTitle: "Miron & Lucas's Birthday Party ⚽", title: "Miron & Lucas's Birthday Party ⚽"
+    },
+    ru: {
+      navCta: "Иду!", nameM: "Мирон", nameL: "Лукас",
+      eyebrow: "🎂 Приглашение · День рождения",
+      h1: "Мирону — 6, Лукасу — 4!",
+      fDate: "Сб, 7 ноя", fTime: "15:00–18:00", miniCal: "📅 Календарь", miniMap: "📍 Google Maps",
+      sub: "Два брата, один футбольный день рождения — <b>Мирон</b> (1 «А») и <b>Лукас</b> (Синяя группа) зовут тебя в свою команду!",
+      heroCta: "Принять вызов в сборную", heroMore: "Когда и где",
+      chipDate: "Сб, 7 ноя", chipAges: "лет юным звёздам",
+      w1: "ПРАЗДНИК", w1b: "ПРАЗДНИК", w2: "ГОЛ!", w2b: "ГОЛ!", w3: "С ДНЁМ РОЖДЕНИЯ", w4: "МИРОН", w4b: "МИРОН", w5: "ЛУКАС", w5b: "ЛУКАС", w6: "ЗВЁЗДЫ",
+      altHero: "Мирон и Лукас, два именинника, рядом",
+      scoreCap: "Итоговый счёт: побеждают оба! 🏆",
+      countTitle: "До стартового свистка", countToday: "Это сегодня! ⚽🎉", countDone: "Спасибо всем юным звёздам! 💛",
+      cdD: "дней", cdH: "часов", cdM: "мин", cdS: "сек",
+      duoKicker: "Команда", duoTitle: "Знакомьтесь — наш дуэт",
+      mironTag: "1 «А» · 6 лет",
+      lucasTag: "Синяя группа · 4 года",
+      altMiron: "Мирон, имениннику исполняется 6", altLucas: "Лукас, имениннику исполняется 4",
+      duoNote: "Вместе они — лучший дуэт чемпионата, и в этом году празднуют вместе!",
+      whenKicker: "Когда и где", whenTitle: "Отметьте в календаре",
+      lblDay: "День", bigDay: "Сб, 7 ноя", lblTime: "Время", bigTime: "15–18 ч", lblPlace: "Место",
+      near: "Тельейраш, рядом с Pingo Doce", btnMap: "Открыть карту", btnCal: "Добавить в календарь",
+      progKicker: "Программа", progTitle: "План на игру",
+      p1t: "Выход на поле", p1: "Сбор и разминка: замок, игровая площадка и батут.",
+      p2t: "Первый тайм", p2: "Аквагрим и фигурки из шариков с нашим аниматором.",
+      p3time: "Перерыв", p3t: "Перекус", p3: "Небольшая пауза, чтобы набраться сил.",
+      p4time: "2-й тайм", p4t: "Свободная игра", p4: "Мини-футбольное поле, замок и дискотека.",
+      p5t: "Кубок и поздравления", p5: "Торт и «С днём рождения» — дважды!",
+      p6t: "Финальный свисток", p6: "Пора забирать юных звёзд.",
+      venueKicker: "Стадион", venueTitle: "Всё для большой игры",
+      inT: "Внутри", inP: "Волшебный замок, игровая площадка, двухэтажный домик и мини-дискотека.",
+      outT: "Снаружи", outP: "Батут и мини-футбольное поле.",
+      rain: "Если пойдёт дождь, праздник продолжится внутри! 🌧️➡️🎉",
+      parT: "Для родителей 💛",
+      parP: "В зале есть ограничение на количество взрослых, поэтому, к сожалению, мы не сможем принять родителей во время праздника — простите! Приводите малышей к 15:00 и забирайте в 18:00. Не волнуйтесь: дети всё время будут под присмотром — нашим, двух воспитателей зала и аниматора. Если вашему ребёнку нужно особое внимание, просто скажите нам — обо всём позаботимся.",
+      drop: "🚗 Приводим: 15:00", pick: "🏁 Забираем: 18:00",
+      bringKicker: "Полезно знать", bringTitle: "Перед матчем",
+      b1t: "Носочки обязательно", b1: "В O Reino играют без обуви.",
+      b2t: "Удобная одежда", b2: "Такая, которую не жалко испачкать — аквагрим смывается водой с мылом.",
+      b3t: "Игрушки — дома", b3: "В O Reino есть чем заняться.",
+      b4t: "Аллергия?", b4: "Напишите об этом в сообщении с подтверждением.",
+      b5t: "Если дождь", b5: "Уличную зону могут закрыть — веселье продолжится внутри.",
+      rsvpT: "Вызов в сборную! 📣",
+      rsvpP: "Подтвердите до <b>3 ноября</b>: напишите имя ребёнка и отправьте сообщение маме или папе именинников — WhatsApp откроется с готовым текстом.",
+      label: "Имя ребёнка", ph: "напр.: Миша", err: "Напишите имя ребёнка 😊",
+      toMum: "Отправить маме", toDad: "Отправить папе",
+      hint: "Откроется WhatsApp с готовым сообщением — останется только нажать «Отправить».",
+      thanks: "Спасибо! Увидимся на поле ⚽",
+      msg: n => `Привет! Подтверждаю, что ${n} придёт на день рождения Мирона и Лукаса в субботу, 7 ноября, в 15:00. До встречи!`,
+      foot: "С кучей голов и объятий, Мирон, Лукас и семья ⚽💛",
+      calTitle: "День рождения Мирона и Лукаса ⚽", title: "День рождения Мирона и Лукаса ⚽"
     }
   };
 
