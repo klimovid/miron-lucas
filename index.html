@@ -1,0 +1,684 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#F7F7F7">
+<title>Festa do Miron e do Lucas ⚽</title>
+<meta name="description" content="Sábado, 7 de novembro, 15:00 · O Reino, Telheiras. Estás convocado!">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://klimovid.github.io/miron-lucas/">
+<meta property="og:title" content="Festa a dobrar: Miron 6 &amp; Lucas 4 ⚽">
+<meta property="og:description" content="Sábado, 7 de novembro, 15:00 · O Reino, Telheiras. Estás convocado!">
+<meta property="og:image" content="https://klimovid.github.io/miron-lucas/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚽</text></svg>">
+<link rel="preload" as="image" href="img/hero.webp" fetchpriority="high">
+<style>
+:root{
+  --bg:#F7F7F7; --card:#FFFFFF; --ink:#1A1A1A; --muted:#6E6E73; --line:#E8E8E8;
+  --pitch:#1E7B3A; --pitch-dark:#0E4826; --pitch-light:#2E9E4F;
+  --yellow:#FFD23F; --yellow-soft:#FFF6D6; --blue:#2B7FFF; --blue-soft:#E3EEFF;
+  --red:#E63946; --wa:#25D366; --wa-dark:#1DA851; --sky:#D9F4FB;
+  --r-xl:36px; --r-lg:28px; --r-md:20px;
+  --shadow:0 1px 2px rgba(0,0,0,.04),0 12px 40px rgba(0,0,0,.06);
+  --ease:cubic-bezier(.22,1,.36,1);
+  --font:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Inter","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--font);background:var(--bg);color:var(--ink);font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+h2{font-size:clamp(32px,6.5vw,56px);line-height:1.05;letter-spacing:-.03em;font-weight:700}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--muted);letter-spacing:.02em;text-transform:uppercase;margin-bottom:14px}
+.lead{font-size:clamp(18px,2.4vw,21px);color:var(--muted);margin-top:14px;max-width:640px}
+.card{background:var(--card);border-radius:var(--r-lg);box-shadow:var(--shadow);padding:28px}
+
+/* nav */
+.nav{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(247,247,247,.72);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.05);padding-top:env(safe-area-inset-top)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;gap:12px}
+.brand{font-weight:700;letter-spacing:-.01em;text-decoration:none;white-space:nowrap}
+.nav-r{display:flex;align-items:center;gap:10px}
+.lang{display:flex;background:rgba(0,0,0,.06);border-radius:999px;padding:3px}
+.lang button{border:0;background:transparent;font:600 13px var(--font);padding:6px 11px;border-radius:999px;color:var(--muted);cursor:pointer}
+.lang button[aria-pressed="true"]{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.nav .pill-sm{font:600 13px var(--font);background:var(--ink);color:#fff;text-decoration:none;padding:8px 14px;border-radius:999px;white-space:nowrap}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font:600 17px var(--font);text-decoration:none;border:0;cursor:pointer;transition:transform .2s var(--ease),background .2s,box-shadow .2s;-webkit-tap-highlight-color:transparent}
+.btn:active{transform:scale(.97)}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-light{background:#fff;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+.btn-wa{background:var(--wa);color:#fff;width:100%}
+.btn-wa:hover{background:var(--wa-dark)}
+.btn svg{width:22px;height:22px;flex:none}
+
+/* hero */
+.hero{padding:calc(56px + env(safe-area-inset-top) + 36px) 0 40px;background:linear-gradient(180deg,var(--sky) 0%,rgba(217,244,251,0) 520px)}
+.hero-grid{display:grid;gap:36px;align-items:center}
+.eyebrow{display:inline-flex;flex-wrap:wrap;gap:6px;align-items:center;background:#fff;border-radius:999px;padding:7px 14px;font-size:14px;font-weight:600;box-shadow:var(--shadow)}
+.eyebrow i{font-style:normal;color:var(--muted)}
+.hero h1{font-size:clamp(44px,10vw,92px);line-height:.98;letter-spacing:-.045em;font-weight:800;margin-top:18px}
+.hero h1 .ball{display:inline-block;animation:bounce 2.4s var(--ease) infinite}
+.hero p.sub{font-size:clamp(19px,2.6vw,23px);color:#3A3A3C;margin-top:18px;max-width:560px}
+.hero p.sub b{color:var(--ink)}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.hero-photo{position:relative;will-change:transform}
+.hero-photo img{width:100%;height:auto;max-height:72svh;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r-xl);box-shadow:0 30px 80px rgba(14,72,38,.22)}
+.chip{position:absolute;background:rgba(255,255,255,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-radius:18px;padding:10px 14px;font-weight:700;font-size:15px;box-shadow:0 8px 30px rgba(0,0,0,.12);display:flex;gap:8px;align-items:center;font-variant-numeric:tabular-nums}
+.chip small{display:block;font-weight:600;font-size:12px;color:var(--muted)}
+.chip.c1{left:-8px;top:8%}
+.chip.c2{right:-8px;bottom:9%}
+@keyframes bounce{0%,100%{transform:translateY(0) rotate(0)}30%{transform:translateY(-18%) rotate(40deg)}55%{transform:translateY(0) rotate(80deg)}70%{transform:translateY(-6%) rotate(90deg)}}
+
+/* scoreboard */
+.board{position:relative;overflow:hidden;border-radius:var(--r-xl);color:#fff;padding:40px 24px;text-align:center;background:
+  repeating-linear-gradient(90deg,var(--pitch) 0 60px,var(--pitch-light) 60px 120px)}
+.board::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 0%,rgba(255,255,255,.18),transparent 60%),linear-gradient(180deg,rgba(14,72,38,.15),rgba(14,72,38,.65))}
+.board svg.lines{position:absolute;inset:0;width:100%;height:100%;opacity:.28}
+.board > *{position:relative}
+.score{display:flex;justify-content:center;align-items:center;gap:clamp(12px,4vw,32px);font-weight:800;letter-spacing:-.02em}
+.score .side{display:flex;flex-direction:column;align-items:center;gap:10px}
+.score .team{font-size:clamp(16px,3.4vw,24px);letter-spacing:.08em;text-transform:uppercase;opacity:.92}
+.score .n{font-size:clamp(64px,16vw,140px);line-height:1;font-variant-numeric:tabular-nums;background:rgba(0,0,0,.28);border-radius:24px;padding:4px 22px;min-width:1.3em;text-shadow:0 0 30px rgba(255,210,63,.5);color:var(--yellow)}
+.score .colon{font-size:clamp(40px,10vw,90px);opacity:.8;margin-top:-34px}
+.board .cap{margin-top:18px;font-size:clamp(17px,2.4vw,20px);font-weight:600}
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:520px;margin:28px auto 0}
+.count div{background:rgba(255,255,255,.14);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-radius:16px;padding:12px 4px}
+.count b{display:block;font-size:clamp(26px,6vw,38px);font-variant-numeric:tabular-nums;line-height:1.1}
+.count span{font-size:12px;text-transform:uppercase;letter-spacing:.08em;opacity:.85}
+.count-title{margin-top:26px;font-size:15px;font-weight:600;opacity:.9}
+
+/* players */
+.players{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:32px}
+.player{position:relative;border-radius:var(--r-lg);overflow:hidden;background:#fff;box-shadow:var(--shadow);cursor:pointer;-webkit-tap-highlight-color:transparent;transition:transform .3s var(--ease)}
+.player:active{transform:scale(.98)}
+.player img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+.player .num{position:absolute;top:12px;right:12px;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:26px;box-shadow:0 6px 20px rgba(0,0,0,.18)}
+.player.m .num{background:var(--yellow);color:var(--ink)}
+.player.l .num{background:var(--blue);color:#fff}
+.player .info{padding:16px 16px 20px}
+.player h3{font-size:clamp(22px,4vw,30px);letter-spacing:-.02em;line-height:1.1}
+.tag{display:inline-block;margin-top:8px;font-size:13px;font-weight:700;padding:5px 11px;border-radius:999px}
+.player.m .tag{background:var(--yellow-soft);color:#7A5B00}
+.player.l .tag{background:var(--blue-soft);color:#1550B8}
+.player p{margin-top:10px;font-size:15px;color:var(--muted);line-height:1.45}
+.duo-note{margin-top:22px;font-size:clamp(18px,2.4vw,21px);font-weight:600;text-align:center}
+.player.pop{animation:pop .5s var(--ease)}
+@keyframes pop{30%{transform:scale(1.04) rotate(-1deg)}60%{transform:scale(.99) rotate(.5deg)}}
+
+/* marquee */
+.marquee{overflow:hidden;padding:8px 0 4px;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 8%,#000 92%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0%,#000 8%,#000 92%,transparent 100%)}
+.track{display:flex;gap:14px;width:max-content;animation:slide 38s linear infinite}
+.track img{height:clamp(220px,40vw,320px)!important;width:auto;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r-md);box-shadow:var(--shadow)}
+@keyframes slide{to{transform:translateX(calc(-50% - 7px))}}
+
+/* bento: when & where */
+.bento{display:grid;gap:14px;margin-top:32px;grid-template-columns:1fr 1fr}
+.bento .card{display:flex;flex-direction:column;gap:6px}
+.bento .big{font-size:clamp(26px,6vw,46px);font-weight:800;letter-spacing:-.03em;line-height:1.05;font-variant-numeric:tabular-nums}
+.bento .lbl{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.bento .place{grid-column:1/-1}
+.bento .place .addr{font-size:17px;color:#3A3A3C}
+.bento .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.date-card{background:var(--yellow)!important}
+.date-card .lbl{color:rgba(0,0,0,.55)}
+.time-card{background:var(--ink)!important;color:#fff}
+.time-card .lbl{color:rgba(255,255,255,.6)}
+
+/* timeline */
+.timeline{margin-top:32px;display:grid;gap:12px}
+.step{display:grid;grid-template-columns:64px 1fr;gap:16px;align-items:start;background:#fff;border-radius:var(--r-md);padding:18px;box-shadow:var(--shadow)}
+.step .ico{width:64px;height:64px;border-radius:18px;display:grid;place-items:center;font-size:30px}
+.step time{font-size:14px;font-weight:700;color:var(--muted);font-variant-numeric:tabular-nums}
+.step h3{font-size:19px;letter-spacing:-.01em;margin-top:2px}
+.step p{font-size:16px;color:#3A3A3C;margin-top:2px}
+
+/* venue */
+.venue{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:32px}
+.zone{border-radius:var(--r-lg);padding:24px;min-height:220px;display:flex;flex-direction:column;gap:2px}
+.zone .em{font-size:44px;line-height:1;margin-bottom:auto;padding-bottom:18px}
+.zone h3{font-size:24px;letter-spacing:-.02em}
+.zone .m2{font-size:14px;font-weight:700;opacity:.7}
+.zone p{margin-top:6px;font-size:16px}
+.zone.in{background:#EFE7FF}
+.zone.out{background:#DDF5E4}
+.rain{margin-top:14px;text-align:center;color:var(--muted);font-size:16px}
+
+/* parents */
+.parents{background:var(--yellow-soft);border-radius:var(--r-xl);padding:clamp(28px,5vw,48px)}
+.parents h2{font-size:clamp(28px,5vw,44px)}
+.parents p{margin-top:14px;font-size:clamp(17px,2.2vw,19px);color:#3A3A3C;max-width:720px}
+.times{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.times span{background:#fff;border-radius:999px;padding:10px 16px;font-weight:700;font-size:15px;box-shadow:var(--shadow)}
+
+/* bring */
+.bring{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:32px}
+.bring .card{padding:22px}
+.bring .em{font-size:34px}
+.bring h3{font-size:18px;margin-top:10px;letter-spacing:-.01em}
+.bring p{font-size:15px;color:var(--muted);margin-top:4px}
+
+/* rsvp */
+.rsvp{background:var(--ink);color:#fff;border-radius:var(--r-xl);padding:clamp(28px,6vw,56px);text-align:center;position:relative;overflow:hidden}
+.rsvp::before{content:"";position:absolute;inset:auto -20% -60% -20%;height:120%;background:radial-gradient(closest-side,rgba(37,211,102,.35),transparent);pointer-events:none}
+.rsvp > *{position:relative}
+.rsvp h2{color:#fff}
+.rsvp .lead{color:rgba(255,255,255,.72);margin:14px auto 0}
+.field{max-width:460px;margin:30px auto 0;text-align:left}
+.field label{display:block;font-size:14px;font-weight:600;color:rgba(255,255,255,.75);margin:0 0 8px 6px}
+.field input{width:100%;height:58px;border-radius:18px;border:2px solid transparent;background:#fff;color:var(--ink);font:500 19px var(--font);padding:0 20px;outline:none;transition:border-color .2s,box-shadow .2s}
+.field input:focus{border-color:var(--wa);box-shadow:0 0 0 5px rgba(37,211,102,.25)}
+.field.err input{border-color:var(--red);box-shadow:0 0 0 5px rgba(230,57,70,.25)}
+.field.err.shake input{animation:shake .4s}
+.err-msg{min-height:22px;font-size:15px;color:#FF8A93;margin:8px 0 0 6px}
+@keyframes shake{20%,60%{transform:translateX(-8px)}40%,80%{transform:translateX(8px)}}
+.wa-btns{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:460px;margin:8px auto 0}
+.hint{font-size:14px;color:rgba(255,255,255,.6);margin-top:16px}
+.thanks{font-size:19px;font-weight:700;color:var(--wa);margin-top:16px;min-height:28px;opacity:0;transform:translateY(8px);transition:all .5s var(--ease)}
+.thanks.show{opacity:1;transform:none}
+
+footer{padding:40px 0 calc(48px + env(safe-area-inset-bottom));text-align:center;color:var(--muted);font-size:16px}
+footer b{color:var(--ink)}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}.rv.d3{transition-delay:.24s}
+
+/* confetti */
+.conf{position:fixed;top:0;left:0;pointer-events:none;z-index:99;font-size:22px;will-change:transform,opacity}
+
+@media (min-width:820px){
+  section{padding:80px 0}
+  .hero{padding-top:140px}
+  .hero-grid{grid-template-columns:1.1fr .9fr;gap:56px}
+  .players{gap:22px}
+  .bento{grid-template-columns:1fr 1fr 1.6fr}
+  .bento .place{grid-column:auto}
+  .timeline{grid-template-columns:1fr 1fr}
+  .bring{grid-template-columns:repeat(5,1fr)}
+}
+@media (max-width:380px){
+  .nav .pill-sm{display:none}
+  .wa-btns{grid-template-columns:1fr}
+  .players{gap:10px}
+  .player .info{padding:12px 12px 16px}
+}
+@media (max-width:520px){
+  .wa-btns{grid-template-columns:1fr}
+  .player p{display:none}
+  .venue{grid-template-columns:1fr}
+  .zone{min-height:0}
+  .bring .card:last-child{grid-column:1/-1}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+  .marquee{overflow-x:auto}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">⚽ Miron &amp; Lucas</a>
+    <div class="nav-r">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="pt" aria-pressed="true">PT</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="pill-sm" href="#rsvp" data-i18n="navCta">Confirmar</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow rv" data-i18n="eyebrow">Dois irmãos · Uma equipa · Uma festa a dobrar!</span>
+      <h1 class="rv d1"><span data-i18n="h1">Dois aniversários, uma só festa!</span> <span class="ball" aria-hidden="true">⚽</span></h1>
+      <p class="sub rv d2" data-i18n="sub"></p>
+      <div class="cta rv d3">
+        <a class="btn btn-dark" href="#rsvp" data-focus-rsvp data-i18n="heroCta">Aceitar a convocatória</a>
+        <a class="btn btn-light" href="#when" data-i18n="heroMore">Quando e onde</a>
+      </div>
+    </div>
+    <div class="hero-photo rv d2" id="heroPhoto">
+      <img src="img/hero.webp" width="760" height="950" fetchpriority="high" data-i18n-alt="altHero" alt="">
+      <div class="chip c1">📅 <div><span data-i18n="chipDate">Sáb, 7 nov</span><small>15:00–18:00</small></div></div>
+      <div class="chip c2">🎂 <div>6 + 4<small data-i18n="chipAges">anos de craques</small></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SCOREBOARD -->
+<section style="padding-top:8px">
+  <div class="wrap">
+    <div class="board rv">
+      <svg class="lines" viewBox="0 0 400 240" preserveAspectRatio="none" aria-hidden="true" fill="none" stroke="#fff" stroke-width="2">
+        <rect x="8" y="8" width="384" height="224" rx="4"/><line x1="200" y1="8" x2="200" y2="232"/><circle cx="200" cy="120" r="42"/><circle cx="200" cy="120" r="3" fill="#fff"/>
+        <rect x="8" y="70" width="48" height="100"/><rect x="344" y="70" width="48" height="100"/>
+      </svg>
+      <div class="score" aria-label="Miron 6, Lucas 4">
+        <span class="side"><span class="n">6</span><span class="team">Miron</span></span><span class="colon">:</span><span class="side"><span class="n">4</span><span class="team">Lucas</span></span>
+      </div>
+      <p class="cap" data-i18n="scoreCap">Resultado final: ganham os dois! 🏆</p>
+      <p class="count-title" id="countTitle" data-i18n="countTitle">Faltam para o apito inicial</p>
+      <div class="count" id="count" aria-live="off">
+        <div><b id="cd-d">–</b><span data-i18n="cdD">dias</span></div>
+        <div><b id="cd-h">–</b><span data-i18n="cdH">horas</span></div>
+        <div><b id="cd-m">–</b><span data-i18n="cdM">min</span></div>
+        <div><b id="cd-s">–</b><span data-i18n="cdS">seg</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DUO -->
+<section>
+  <div class="wrap">
+    <span class="kicker rv">🏆 <span data-i18n="duoKicker">A equipa</span></span>
+    <h2 class="rv d1" data-i18n="duoTitle">Conhece a dupla</h2>
+    <div class="players">
+      <article class="player m rv" tabindex="0">
+        <img src="img/miron.webp" width="500" height="625" loading="lazy" data-i18n-alt="altMiron" alt="">
+        <span class="num">6</span>
+        <div class="info">
+          <h3>Miron</h3>
+          <span class="tag" data-i18n="mironTag">1.º A · 6 anos</span>
+          <p data-i18n="mironTxt">O capitão da equipa. Já anda no 1.º A e este ano faz 6!</p>
+        </div>
+      </article>
+      <article class="player l rv d1" tabindex="0">
+        <img src="img/lucas.webp" width="600" height="750" loading="lazy" data-i18n-alt="altLucas" alt="">
+        <span class="num">4</span>
+        <div class="info">
+          <h3>Lucas</h3>
+          <span class="tag" data-i18n="lucasTag">Sala Azul · 4 anos</span>
+          <p data-i18n="lucasTxt">O reforço mais novo e cheio de energia, direto da Sala Azul. Faz 4!</p>
+        </div>
+      </article>
+    </div>
+    <p class="duo-note rv" data-i18n="duoNote">Juntos são a melhor dupla do campeonato — e este ano festejam juntos!</p>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee rv" aria-hidden="true">
+  <div class="track">
+    <img src="img/g-palms.webp" alt="" loading="lazy" width="640" height="800">
+    <img src="img/miron.webp" alt="" loading="lazy" width="500" height="625">
+    <img src="img/g-lucas.webp" alt="" loading="lazy" width="640" height="800">
+    <img src="img/hero.webp" alt="" loading="lazy" width="760" height="950">
+    <img src="img/g-miron.webp" alt="" loading="lazy" width="560" height="700">
+    <img src="img/lucas.webp" alt="" loading="lazy" width="560" height="700">
+    <img src="img/g-palms.webp" alt="" loading="lazy" width="640" height="800">
+    <img src="img/miron.webp" alt="" loading="lazy" width="500" height="625">
+    <img src="img/g-lucas.webp" alt="" loading="lazy" width="640" height="800">
+    <img src="img/hero.webp" alt="" loading="lazy" width="760" height="950">
+    <img src="img/g-miron.webp" alt="" loading="lazy" width="560" height="700">
+    <img src="img/lucas.webp" alt="" loading="lazy" width="560" height="700">
+  </div>
+</div>
+
+<!-- WHEN & WHERE -->
+<section id="when">
+  <div class="wrap">
+    <span class="kicker rv">📍 <span data-i18n="whenKicker">Quando e onde</span></span>
+    <h2 class="rv d1" data-i18n="whenTitle">Marca na agenda</h2>
+    <div class="bento">
+      <div class="card date-card rv">
+        <span class="lbl" data-i18n="lblDay">Dia</span>
+        <span class="big" data-i18n="bigDay">Sáb, 7 nov</span>
+      </div>
+      <div class="card time-card rv d1">
+        <span class="lbl" data-i18n="lblTime">Hora</span>
+        <span class="big" data-i18n="bigTime">15:00–18:00</span>
+      </div>
+      <div class="card place rv d2">
+        <span class="lbl" data-i18n="lblPlace">Local</span>
+        <span class="big" style="font-size:clamp(26px,5vw,36px)">O Reino</span>
+        <span class="addr">Rua Professor Alfredo de Sousa 4A, 1600-188 Lisboa</span>
+        <span class="addr" style="color:var(--muted)" data-i18n="near">Telheiras, junto ao Pingo Doce</span>
+        <div class="btns">
+          <a class="btn btn-dark" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&amp;query=Rua+Professor+Alfredo+de+Sousa+4A,+1600-188+Lisboa" data-i18n="btnMap">Abrir no mapa</a>
+          <button class="btn btn-light" type="button" id="calBtn" data-i18n="btnCal">Adicionar ao calendário</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAM -->
+<section>
+  <div class="wrap">
+    <span class="kicker rv">📣 <span data-i18n="progKicker">Programa</span></span>
+    <h2 class="rv d1" data-i18n="progTitle">O plano de jogo</h2>
+    <div class="timeline">
+      <div class="step rv"><div class="ico" style="background:#DDF5E4">🥅</div><div><time>15:00</time><h3 data-i18n="p1t">Entrada em campo</h3><p data-i18n="p1">Chegada e aquecimento no castelo, no parque e no trampolim.</p></div></div>
+      <div class="step rv d1"><div class="ico" style="background:#FFE7DC">🎨</div><div><time>15:30</time><h3 data-i18n="p2t">Primeira parte</h3><p data-i18n="p2">Pinturas faciais e modelagem de balões com a nossa animadora.</p></div></div>
+      <div class="step rv"><div class="ico" style="background:var(--yellow-soft)">🥪</div><div><time data-i18n="p3time">Intervalo</time><h3 data-i18n="p3t">Lanche</h3><p data-i18n="p3">Uma pausa para recuperar energias.</p></div></div>
+      <div class="step rv d1"><div class="ico" style="background:#EFE7FF">⚽</div><div><time data-i18n="p4time">2.ª parte</time><h3 data-i18n="p4t">Jogo livre</h3><p data-i18n="p4">Mini campo de futebol, castelo e discoteca.</p></div></div>
+      <div class="step rv"><div class="ico" style="background:var(--blue-soft)">🎂</div><div><time>~17:30</time><h3 data-i18n="p5t">Taça e Parabéns</h3><p data-i18n="p5">Bolo e “Parabéns a você” — a dobrar!</p></div></div>
+      <div class="step rv d1"><div class="ico" style="background:#F2F2F2">🏁</div><div><time>18:00</time><h3 data-i18n="p6t">Apito final</h3><p data-i18n="p6">Hora de ir buscar os craques.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- VENUE -->
+<section>
+  <div class="wrap">
+    <span class="kicker rv">🏰 <span data-i18n="venueKicker">O estádio</span></span>
+    <h2 class="rv d1" data-i18n="venueTitle">Tudo para um grande jogo</h2>
+    <div class="venue">
+      <div class="zone in rv"><span class="em">🏰</span><span class="m2">110 m²</span><h3 data-i18n="inT">Lá dentro</h3><p data-i18n="inP">Castelo encantado, parque, casinha de dois andares e mini discoteca.</p></div>
+      <div class="zone out rv d1"><span class="em">🤸</span><span class="m2">100 m²</span><h3 data-i18n="outT">Lá fora</h3><p data-i18n="outP">Trampolim e mini campo de futebol.</p></div>
+    </div>
+    <p class="rain rv" data-i18n="rain">Se chover, a festa continua lá dentro! 🌧️➡️🎉</p>
+  </div>
+</section>
+
+<!-- PARENTS -->
+<section>
+  <div class="wrap">
+    <div class="parents rv">
+      <h2 data-i18n="parT">Uma nota para os pais 💛</h2>
+      <p data-i18n="parP"></p>
+      <div class="times">
+        <span data-i18n="drop">🚗 Entrega: 15:00</span>
+        <span data-i18n="pick">🏁 Recolha: 18:00</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRING -->
+<section style="padding-top:24px">
+  <div class="wrap">
+    <span class="kicker rv">🎒 <span data-i18n="bringKicker">Bom saber</span></span>
+    <h2 class="rv d1" data-i18n="bringTitle">Antes do jogo</h2>
+    <div class="bring">
+      <div class="card rv"><div class="em">🧦</div><h3 data-i18n="b1t">Meias obrigatórias</h3><p data-i18n="b1">No Reino brinca-se sem sapatos.</p></div>
+      <div class="card rv d1"><div class="em">👕</div><h3 data-i18n="b2t">Roupa confortável</h3><p data-i18n="b2">Que se possa sujar — as pinturas saem com água e sabão.</p></div>
+      <div class="card rv d2"><div class="em">🧸</div><h3 data-i18n="b3t">Brinquedos em casa</h3><p data-i18n="b3">No Reino há muito com que brincar.</p></div>
+      <div class="card rv"><div class="em">🥜</div><h3 data-i18n="b4t">Alergias?</h3><p data-i18n="b4">Digam-nos na mensagem de confirmação.</p></div>
+      <div class="card rv d1"><div class="em">🌧️</div><h3 data-i18n="b5t">Se chover</h3><p data-i18n="b5">A zona exterior pode fechar — a diversão continua lá dentro.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- RSVP -->
+<section id="rsvp">
+  <div class="wrap">
+    <div class="rsvp rv">
+      <h2 data-i18n="rsvpT">Convocatória! 📣</h2>
+      <p class="lead" data-i18n="rsvpP"></p>
+      <div class="field" id="field">
+        <label for="kid" data-i18n="label">Nome da criança</label>
+        <input id="kid" type="text" autocomplete="off" autocapitalize="words" maxlength="40" enterkeyhint="done" data-i18n-ph="ph" placeholder="ex.: Tomás">
+        <div class="err-msg" id="err" aria-live="polite"></div>
+      </div>
+      <div class="wa-btns">
+        <button class="btn btn-wa" type="button" data-to="mum"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-1 1.2-.4.2-.7.1a8.2 8.2 0 0 1-4-3.5c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.8.4 3.5 3.5 0 0 0-1.1 2.6 6 6 0 0 0 1.3 3.2 13.8 13.8 0 0 0 5.3 4.7c2 .8 2.7.9 3.7.8.6-.1 1.8-.8 2.1-1.5s.3-1.3.2-1.5-.3-.2-.6-.3zM12 21.8a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8zm8.4-18.2A11.8 11.8 0 0 0 1.8 17.8L.1 24l6.3-1.7A11.8 11.8 0 0 0 23.8 12a11.7 11.7 0 0 0-3.4-8.4z"/></svg><span data-i18n="toMum">Enviar à mãe</span></button>
+        <button class="btn btn-wa" type="button" data-to="dad"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-1 1.2-.4.2-.7.1a8.2 8.2 0 0 1-4-3.5c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.8.4 3.5 3.5 0 0 0-1.1 2.6 6 6 0 0 0 1.3 3.2 13.8 13.8 0 0 0 5.3 4.7c2 .8 2.7.9 3.7.8.6-.1 1.8-.8 2.1-1.5s.3-1.3.2-1.5-.3-.2-.6-.3zM12 21.8a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8zm8.4-18.2A11.8 11.8 0 0 0 1.8 17.8L.1 24l6.3-1.7A11.8 11.8 0 0 0 23.8 12a11.7 11.7 0 0 0-3.4-8.4z"/></svg><span data-i18n="toDad">Enviar ao pai</span></button>
+      </div>
+      <p class="hint" data-i18n="hint">Abre o WhatsApp com a mensagem pronta — só falta carregar em enviar.</p>
+      <p class="thanks" id="thanks" data-i18n="thanks">Obrigado! Vemo-nos em campo ⚽</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap"><b data-i18n="foot">Com muitos golos e abraços, Miron, Lucas e família ⚽💛</b></div>
+</footer>
+
+<script>
+(() => {
+  const CONTACTS = { mum: "351912603694", dad: "351913439274" };
+  const KICKOFF = Date.UTC(2026, 10, 7, 15, 0, 0); // 15:00 Lisbon (WET = UTC+0 in November)
+  const END = Date.UTC(2026, 10, 7, 18, 0, 0);
+
+  const T = {
+    pt: {
+      navCta: "Confirmar",
+      eyebrow: "Dois irmãos · Uma equipa · Uma festa a dobrar!",
+      h1: "Dois aniversários, uma só festa!",
+      sub: "Os manos <b>Miron</b> (6 anos, 1.º A) e <b>Lucas</b> (4 anos, Sala Azul) juntam as velas e entram em campo lado a lado — e queremos-te na nossa equipa!",
+      heroCta: "Aceitar a convocatória", heroMore: "Quando e onde",
+      chipDate: "Sáb, 7 nov", chipAges: "anos de craques",
+      altHero: "Miron e Lucas, os dois aniversariantes, lado a lado",
+      scoreCap: "Resultado final: ganham os dois! 🏆",
+      countTitle: "Faltam para o apito inicial", countToday: "É hoje! ⚽🎉", countDone: "Obrigado a todos os craques! 💛",
+      cdD: "dias", cdH: "horas", cdM: "min", cdS: "seg",
+      duoKicker: "A equipa", duoTitle: "Conhece a dupla",
+      mironTag: "1.º A · 6 anos", mironTxt: "O capitão da equipa. Já anda no 1.º A e este ano faz 6!",
+      lucasTag: "Sala Azul · 4 anos", lucasTxt: "O reforço mais novo e cheio de energia, direto da Sala Azul. Faz 4!",
+      altMiron: "Miron, o aniversariante de 6 anos", altLucas: "Lucas, o aniversariante de 4 anos",
+      duoNote: "Juntos são a melhor dupla do campeonato — e este ano festejam juntos!",
+      whenKicker: "Quando e onde", whenTitle: "Marca na agenda",
+      lblDay: "Dia", bigDay: "Sáb, 7 nov", lblTime: "Hora", bigTime: "15:00–18:00", lblPlace: "Local",
+      near: "Telheiras, junto ao Pingo Doce", btnMap: "Abrir no mapa", btnCal: "Adicionar ao calendário",
+      progKicker: "Programa", progTitle: "O plano de jogo",
+      p1t: "Entrada em campo", p1: "Chegada e aquecimento no castelo, no parque e no trampolim.",
+      p2t: "Primeira parte", p2: "Pinturas faciais e modelagem de balões com a nossa animadora.",
+      p3time: "Intervalo", p3t: "Lanche", p3: "Uma pausa para recuperar energias.",
+      p4time: "2.ª parte", p4t: "Jogo livre", p4: "Mini campo de futebol, castelo e discoteca.",
+      p5t: "Taça e Parabéns", p5: "Bolo e “Parabéns a você” — a dobrar!",
+      p6t: "Apito final", p6: "Hora de ir buscar os craques.",
+      venueKicker: "O estádio", venueTitle: "Tudo para um grande jogo",
+      inT: "Lá dentro", inP: "Castelo encantado, parque, casinha de dois andares e mini discoteca.",
+      outT: "Lá fora", outP: "Trampolim e mini campo de futebol.",
+      rain: "Se chover, a festa continua lá dentro! 🌧️➡️🎉",
+      parT: "Uma nota para os pais 💛",
+      parP: "O espaço tem um limite de adultos, por isso, infelizmente, não vamos conseguir receber os pais durante a festa — pedimos desculpa! Podem deixar os pequenos às 15:00 e voltar às 18:00. Fiquem descansados: os craques vão estar sempre acompanhados por nós, pelos dois monitores do espaço e pela animadora. Se o vosso filho precisar de alguma atenção especial, digam-nos — tratamos de tudo com carinho.",
+      drop: "🚗 Entrega: 15:00", pick: "🏁 Recolha: 18:00",
+      bringKicker: "Bom saber", bringTitle: "Antes do jogo",
+      b1t: "Meias obrigatórias", b1: "No Reino brinca-se sem sapatos.",
+      b2t: "Roupa confortável", b2: "Que se possa sujar — as pinturas saem com água e sabão.",
+      b3t: "Brinquedos em casa", b3: "No Reino há muito com que brincar.",
+      b4t: "Alergias?", b4: "Digam-nos na mensagem de confirmação.",
+      b5t: "Se chover", b5: "A zona exterior pode fechar — a diversão continua lá dentro.",
+      rsvpT: "Convocatória! 📣",
+      rsvpP: "Confirma até <b>3 de novembro</b>: escreve o nome da criança e envia a mensagem à mãe ou ao pai dos aniversariantes — o WhatsApp abre com tudo pronto.",
+      label: "Nome da criança", ph: "ex.: Tomás", err: "Escreve o nome da criança 😊",
+      toMum: "Enviar à mãe", toDad: "Enviar ao pai",
+      hint: "Abre o WhatsApp com a mensagem pronta — só falta carregar em enviar.",
+      thanks: "Obrigado! Vemo-nos em campo ⚽",
+      msg: n => `Olá! Confirmo que ${n} vai à festa dos manos Miron e Lucas no sábado, 7 de novembro, às 15:00. Até lá!`,
+      foot: "Com muitos golos e abraços, Miron, Lucas e família ⚽💛",
+      calTitle: "Festa do Miron e do Lucas ⚽", title: "Festa do Miron e do Lucas ⚽"
+    },
+    en: {
+      navCta: "RSVP",
+      eyebrow: "Two brothers · One team · Double the party!",
+      h1: "Two birthdays, one big party!",
+      sub: "Brothers <b>Miron</b> (6, Class 1A) and <b>Lucas</b> (4, Sala Azul) are teaming up to blow out their candles together — and we want you on our team!",
+      heroCta: "Accept the call-up", heroMore: "When & where",
+      chipDate: "Sat, 7 Nov", chipAges: "years of little stars",
+      altHero: "Miron and Lucas, the two birthday boys, side by side",
+      scoreCap: "Final score: they both win! 🏆",
+      countTitle: "Until kick-off", countToday: "It's today! ⚽🎉", countDone: "Thank you, little stars! 💛",
+      cdD: "days", cdH: "hours", cdM: "min", cdS: "sec",
+      duoKicker: "The team", duoTitle: "Meet the dream team",
+      mironTag: "Class 1A · 6 years old", mironTxt: "The team captain. He's in Class 1A and turning 6!",
+      lucasTag: "Sala Azul · 4 years old", lucasTxt: "The youngest signing, full of energy, straight from Sala Azul. Turning 4!",
+      altMiron: "Miron, the birthday boy turning 6", altLucas: "Lucas, the birthday boy turning 4",
+      duoNote: "Together they're the best duo in the league — and this year they're celebrating side by side!",
+      whenKicker: "When & where", whenTitle: "Save the date",
+      lblDay: "Day", bigDay: "Sat, 7 Nov", lblTime: "Time", bigTime: "3–6 pm", lblPlace: "Venue",
+      near: "Telheiras, next to Pingo Doce", btnMap: "Open in Maps", btnCal: "Add to calendar",
+      progKicker: "Programme", progTitle: "The game plan",
+      p1t: "Kick-off", p1: "Arrival and warm-up on the castle, playground and trampoline.",
+      p2t: "First half", p2: "Face painting and balloon modelling with our entertainer.",
+      p3time: "Half-time", p3t: "Snack", p3: "A break to refuel.",
+      p4time: "2nd half", p4t: "Free play", p4: "Mini football pitch, castle and mini disco.",
+      p5t: "Trophy time", p5: "Cake and Happy Birthday — times two!",
+      p6t: "Final whistle", p6: "Time to pick up your little stars.",
+      venueKicker: "The stadium", venueTitle: "Everything for a great match",
+      inT: "Indoors", inP: "Enchanted castle, playground, two-storey playhouse and mini disco.",
+      outT: "Outdoors", outP: "Trampoline and mini football pitch.",
+      rain: "If it rains, the party simply moves inside! 🌧️➡️🎉",
+      parT: "A note for parents 💛",
+      parP: "The venue has a strict limit on the number of adults, so unfortunately we can't host parents during the party — sorry about that! Please drop your little ones off at 3:00 pm and pick them up at 6:00 pm. Don't worry: the kids will be looked after the whole time by us, the venue's two supervisors and our entertainer. If your child needs any special attention, just let us know — we'll take good care of them.",
+      drop: "🚗 Drop-off: 3:00 pm", pick: "🏁 Pick-up: 6:00 pm",
+      bringKicker: "Good to know", bringTitle: "Before the match",
+      b1t: "Socks are a must", b1: "At O Reino everyone plays shoe-free.",
+      b2t: "Comfy clothes", b2: "That can get a bit messy — face paint washes off with soap and water.",
+      b3t: "Toys stay home", b3: "There's plenty to play with.",
+      b4t: "Allergies?", b4: "Just mention them in your RSVP message.",
+      b5t: "If it rains", b5: "The outdoor area may close — the fun carries on inside.",
+      rsvpT: "You've been called up! 📣",
+      rsvpP: "Please RSVP by <b>3 November</b>: type your child's name and send it to the birthday boys' mum or dad — WhatsApp opens with everything ready to go.",
+      label: "Your child's name", ph: "e.g. Tom", err: "Please add your child's name 😊",
+      toMum: "Send to Mum", toDad: "Send to Dad",
+      hint: "This opens WhatsApp with a ready-made message — just tap send.",
+      thanks: "Thanks! See you on the pitch ⚽",
+      msg: n => `Hi! Just confirming that ${n} is coming to Miron & Lucas's birthday party on Saturday, 7 November, at 3 pm. See you there!`,
+      foot: "With lots of goals and hugs, Miron, Lucas & family ⚽💛",
+      calTitle: "Miron & Lucas's Birthday Party ⚽", title: "Miron & Lucas's Birthday Party ⚽"
+    }
+  };
+
+  let lang = "pt";
+  try { const s = localStorage.getItem("lang"); if (s && T[s]) lang = s; } catch (e) {}
+
+  function apply(l) {
+    lang = l; const d = T[l];
+    document.documentElement.lang = l;
+    document.title = d.title;
+    document.querySelectorAll("[data-i18n]").forEach(el => { const v = d[el.dataset.i18n]; if (typeof v === "string") el.innerHTML = v; });
+    document.querySelectorAll("[data-i18n-alt]").forEach(el => el.alt = d[el.dataset.i18nAlt]);
+    document.querySelectorAll("[data-i18n-ph]").forEach(el => el.placeholder = d[el.dataset.i18nPh]);
+    document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === l));
+    if (field.classList.contains("err")) err.textContent = d.err;
+    tick();
+    try { localStorage.setItem("lang", l); } catch (e) {}
+  }
+  document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => apply(b.dataset.lang)));
+
+  // countdown
+  const $ = id => document.getElementById(id);
+  const field = $("field"), err = $("err"), kid = $("kid");
+  function tick() {
+    const now = Date.now(), d = T[lang];
+    if (now >= KICKOFF) {
+      $("count").style.display = "none";
+      $("countTitle").textContent = now < END ? d.countToday : d.countDone;
+      return false;
+    }
+    let s = Math.floor((KICKOFF - now) / 1000);
+    $("cd-d").textContent = Math.floor(s / 86400); s %= 86400;
+    $("cd-h").textContent = String(Math.floor(s / 3600)).padStart(2, "0"); s %= 3600;
+    $("cd-m").textContent = String(Math.floor(s / 60)).padStart(2, "0");
+    $("cd-s").textContent = String(s % 60).padStart(2, "0");
+    return true;
+  }
+
+  apply(lang);
+  const timer = setInterval(() => { if (!tick()) clearInterval(timer); }, 1000);
+
+  // reveal on scroll
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!reduce && "IntersectionObserver" in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { rootMargin: "0px 0px -8% 0px", threshold: .08 });
+    document.querySelectorAll(".rv").forEach(el => io.observe(el));
+  } else document.querySelectorAll(".rv").forEach(el => el.classList.add("in"));
+
+  // hero parallax
+  const hp = $("heroPhoto");
+  if (!reduce) {
+    let ticking = false;
+    addEventListener("scroll", () => {
+      if (ticking) return; ticking = true;
+      requestAnimationFrame(() => {
+        const y = Math.min(scrollY, 700);
+        hp.style.transform = `translateY(${y * -0.08}px) scale(${1 - y * 0.00012})`;
+        ticking = false;
+      });
+    }, { passive: true });
+  }
+
+  // confetti of balls
+  function confetti(x, y, n = 22) {
+    if (reduce) return;
+    const em = ["⚽", "⚽", "⚽", "🎉", "⭐", "🎈"];
+    for (let i = 0; i < n; i++) {
+      const s = document.createElement("span");
+      s.className = "conf"; s.textContent = em[i % em.length];
+      document.body.appendChild(s);
+      const a = Math.random() * Math.PI * 2, v = 120 + Math.random() * 220;
+      const dx = Math.cos(a) * v, dy = Math.sin(a) * v - 160;
+      s.animate([
+        { transform: `translate(${x}px,${y}px) scale(.6)`, opacity: 1 },
+        { transform: `translate(${x + dx}px,${y + dy + 320}px) rotate(${Math.random() * 720 - 360}deg) scale(1)`, opacity: 0 }
+      ], { duration: 1100 + Math.random() * 600, easing: "cubic-bezier(.2,.7,.4,1)" }).onfinish = () => s.remove();
+    }
+  }
+
+  // player cards
+  document.querySelectorAll(".player").forEach(p => {
+    const go = () => {
+      p.classList.remove("pop"); void p.offsetWidth; p.classList.add("pop");
+      const r = p.getBoundingClientRect(); confetti(r.left + r.width / 2, r.top + r.height / 3, 14);
+    };
+    p.addEventListener("click", go);
+    p.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); } });
+  });
+
+  // focus name field from hero CTA
+  document.querySelectorAll("[data-focus-rsvp], .nav .pill-sm").forEach(a => a.addEventListener("click", () => setTimeout(() => kid.focus({ preventScroll: true }), 650)));
+
+  // RSVP
+  kid.addEventListener("input", () => { field.classList.remove("err", "shake"); err.textContent = ""; });
+  kid.addEventListener("keydown", e => { if (e.key === "Enter") { e.preventDefault(); kid.blur(); } });
+  document.querySelectorAll("[data-to]").forEach(b => b.addEventListener("click", () => {
+    const name = kid.value.trim().replace(/\s+/g, " ");
+    if (!name) {
+      field.classList.remove("shake"); void field.offsetWidth;
+      field.classList.add("err", "shake"); err.textContent = T[lang].err; kid.focus();
+      return;
+    }
+    const url = `https://wa.me/${CONTACTS[b.dataset.to]}?text=${encodeURIComponent(T[lang].msg(name))}`;
+    window.open(url, "_blank", "noopener");
+    const r = b.getBoundingClientRect(); confetti(r.left + r.width / 2, r.top);
+    $("thanks").classList.add("show");
+  }));
+
+  // calendar (.ics)
+  $("calBtn").addEventListener("click", () => {
+    const d = T[lang];
+    const ics = [
+      "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Miron&Lucas//Party//PT", "CALSCALE:GREGORIAN",
+      "BEGIN:VTIMEZONE", "TZID:Europe/Lisbon",
+      "BEGIN:STANDARD", "DTSTART:19701025T020000", "RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU", "TZOFFSETFROM:+0100", "TZOFFSETTO:+0000", "TZNAME:WET", "END:STANDARD",
+      "BEGIN:DAYLIGHT", "DTSTART:19700329T010000", "RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU", "TZOFFSETFROM:+0000", "TZOFFSETTO:+0100", "TZNAME:WEST", "END:DAYLIGHT",
+      "END:VTIMEZONE",
+      "BEGIN:VEVENT", "UID:miron-lucas-2026-11-07@party", "DTSTAMP:20261019T120000Z",
+      "DTSTART;TZID=Europe/Lisbon:20261107T150000", "DTEND;TZID=Europe/Lisbon:20261107T180000",
+      "SUMMARY:" + d.calTitle,
+      "LOCATION:O Reino\\, Rua Professor Alfredo de Sousa 4A\\, 1600-188 Lisboa",
+      "BEGIN:VALARM", "TRIGGER:-PT2H", "ACTION:DISPLAY", "DESCRIPTION:" + d.calTitle, "END:VALARM",
+      "END:VEVENT", "END:VCALENDAR"
+    ].join("\r\n");
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([ics], { type: "text/calendar;charset=utf-8" }));
+    a.download = "festa-miron-lucas.ics";
+    document.body.appendChild(a); a.click(); a.remove();
+  });
+})();
+</script>
+</body>
+</html>
