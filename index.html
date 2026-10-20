@@ -159,12 +159,6 @@ h2{font-size:clamp(28px,6vw,52px);line-height:1.05;letter-spacing:-.03em;font-we
 .zone.out{background:#DDF5E4}
 .rain{margin-top:10px;text-align:center;color:var(--muted);font-size:16px}
 
-/* parents */
-.parents{background:var(--yellow-soft);border-radius:var(--r-xl);padding:clamp(22px,4vw,40px)}
-.parents h2{font-size:clamp(24px,4.6vw,40px)}
-.parents p{margin-top:10px;font-size:clamp(16px,2vw,18px);color:#3A3A3C;max-width:720px}
-.times{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-.times span{background:#fff;border-radius:999px;padding:10px 16px;font-weight:700;font-size:15px;box-shadow:var(--shadow)}
 
 /* bring */
 .bring{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:18px}
@@ -473,26 +467,13 @@ section{position:relative;scroll-margin-top:64px}
   </div>
 </section>
 
-<!-- PARENTS -->
-<section data-bg="#FFF8E6">
-  <div class="wrap">
-    <div class="parents rv zoom">
-      <h2 data-i18n="parT">Uma nota para os pais 💛</h2>
-      <p data-i18n="parP"></p>
-      <div class="times">
-        <span data-i18n="drop">🚗 Entrega: 15:00</span>
-        <span data-i18n="pick">🏁 Recolha: 18:00</span>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- BRING -->
 <section style="padding-top:24px" data-bg="#F7F7F7">
   <div class="wrap">
     <span class="kicker rv">🎒 <span data-i18n="bringKicker">Bom saber</span></span>
     <h2 class="rv d1" data-i18n="bringTitle">Antes do jogo</h2>
     <div class="bring" data-stagger>
+      <div class="card rv"><div class="em">🚗</div><h3 data-i18n="b0t">Entrega e recolha</h3><p data-i18n="b0">Tragam os craques às 15:00 e venham buscá-los às 18:00.</p></div>
       <div class="card rv"><div class="em">🧦</div><h3 data-i18n="b1t">Meias obrigatórias</h3><p data-i18n="b1">No Reino brinca-se sem sapatos.</p></div>
       <div class="card rv"><div class="em">👕</div><h3 data-i18n="b2t">Roupa confortável</h3><p data-i18n="b2">Que se possa sujar — as pinturas saem com água e sabão.</p></div>
       <div class="card rv"><div class="em">🧸</div><h3 data-i18n="b3t">Brinquedos em casa</h3><p data-i18n="b3">No Reino há muito com que brincar.</p></div>
@@ -585,10 +566,8 @@ section{position:relative;scroll-margin-top:64px}
       inT: "Lá dentro", inP: "Castelo encantado, parque, casinha de dois andares e mini discoteca.",
       outT: "Lá fora", outP: "Trampolim e mini campo de futebol.",
       rain: "Se chover, a festa continua lá dentro! 🌧️➡️🎉",
-      parT: "Uma nota para os pais 💛",
-      parP: "O espaço tem um limite de adultos, por isso, infelizmente, não vamos conseguir receber os pais durante a festa — pedimos desculpa! Podem deixar os pequenos às 15:00 e voltar às 18:00. Fiquem descansados: os craques vão estar sempre acompanhados por nós, pelos dois monitores do espaço e pela animadora. Se o vosso filho precisar de alguma atenção especial, digam-nos — tratamos de tudo com carinho.",
-      drop: "🚗 Entrega: 15:00", pick: "🏁 Recolha: 18:00",
       bringKicker: "Bom saber", bringTitle: "Antes do jogo",
+      b0t: "Entrega e recolha", b0: "Tragam os craques às 15:00 e venham buscá-los às 18:00.",
       b1t: "Meias obrigatórias", b1: "No Reino brinca-se sem sapatos.",
       b2t: "Roupa confortável", b2: "Que se possa sujar — as pinturas saem com água e sabão.",
       b3t: "Brinquedos em casa", b3: "No Reino há muito com que brincar.",
@@ -636,10 +615,8 @@ section{position:relative;scroll-margin-top:64px}
       inT: "Indoors", inP: "Enchanted castle, playground, two-storey playhouse and mini disco.",
       outT: "Outdoors", outP: "Trampoline and mini football pitch.",
       rain: "If it rains, the party simply moves inside! 🌧️➡️🎉",
-      parT: "A note for parents 💛",
-      parP: "The venue has a strict limit on the number of adults, so unfortunately we can't host parents during the party — sorry about that! Please drop your little ones off at 3:00 pm and pick them up at 6:00 pm. Don't worry: the kids will be looked after the whole time by us, the venue's two supervisors and our entertainer. If your child needs any special attention, just let us know — we'll take good care of them.",
-      drop: "🚗 Drop-off: 3:00 pm", pick: "🏁 Pick-up: 6:00 pm",
       bringKicker: "Good to know", bringTitle: "Before the match",
+      b0t: "Drop-off & pick-up", b0: "Bring your little stars at 3:00 pm and pick them up at 6:00 pm.",
       b1t: "Socks are a must", b1: "At O Reino everyone plays shoe-free.",
       b2t: "Comfy clothes", b2: "That can get a bit messy — face paint washes off with soap and water.",
       b3t: "Toys stay home", b3: "There's plenty to play with.",
@@ -687,10 +664,8 @@ section{position:relative;scroll-margin-top:64px}
       inT: "Внутри", inP: "Волшебный замок, игровая площадка, двухэтажный домик и мини-дискотека.",
       outT: "Снаружи", outP: "Батут и мини-футбольное поле.",
       rain: "Если пойдёт дождь, праздник продолжится внутри! 🌧️➡️🎉",
-      parT: "Для родителей 💛",
-      parP: "В зале есть ограничение на количество взрослых, поэтому, к сожалению, мы не сможем принять родителей во время праздника — простите! Приводите малышей к 15:00 и забирайте в 18:00. Не волнуйтесь: дети всё время будут под присмотром — нашим, двух воспитателей зала и аниматора. Если вашему ребёнку нужно особое внимание, просто скажите нам — обо всём позаботимся.",
-      drop: "🚗 Приводим: 15:00", pick: "🏁 Забираем: 18:00",
       bringKicker: "Полезно знать", bringTitle: "Перед матчем",
+      b0t: "Привезти и забрать", b0: "Привозите юных звёзд к 15:00, забирайте в 18:00.",
       b1t: "Носочки обязательно", b1: "В O Reino играют без обуви.",
       b2t: "Удобная одежда", b2: "Такая, которую не жалко испачкать — аквагрим смывается водой с мылом.",
       b3t: "Игрушки — дома", b3: "В O Reino есть чем заняться.",
